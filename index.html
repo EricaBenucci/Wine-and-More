@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine and More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #5e0f0f;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #2e2e2e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            gap: 50px;
+        }
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #2e2e2e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wine and More</h1>
+        <p>Wine and Sensory Experiences</p>
+    </header>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="chi-siamo.html">CHI SIAMO</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contatti.html">CONTATTACI</a>
+        <a href="#">ITA</a>
+        <a href="#">ENG</a>
+        <a href="#">FOLLOW US</a>
+    </nav>
+    <div class="main">
+        <a href="wine-tasting.html" class="box">WINE TASTING AND MORE</a>
+        <a href="team-building.html" class="box">TEAM BUILDING</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Wine and More - Tutti i diritti riservati</p>
+    </footer>
+</body>
+</html>
