@@ -6,72 +6,80 @@
   <title>Wine and More – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: 'Quicksand', sans-serif;
-      background-color: #f8f5f0;
-      color: #333;
-    }
-
-    header {
-      background-color: #5e0f0f;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    header h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 60px;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 20px;
-      margin: 10px 0 0;
+      height: 100%;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background-color: #2e2e2e;
-      padding: 12px;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     nav a {
-      color: white;
+      color: #5e0f0f;
       text-decoration: none;
       margin: 0 20px;
       font-weight: bold;
     }
 
-    .container {
+    .hero {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 40px;
-      gap: 100px;
+      flex-direction: row;
+      height: 100vh;
     }
 
-    .box {
-      width: 400px;
-      height: 300px;
+    .hero-box {
+      flex: 1;
       background-size: cover;
       background-position: center;
-      color: white;
-      font-family: 'Dancing Script', cursive;
-      font-size: 30px;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .hero-text {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px 40px;
+      border-radius: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 36px;
+      color: #5e0f0f;
       text-align: center;
-      border-radius: 20px;
-      cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .box:hover {
+    .hero-text:hover {
       transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    header {
+      background-color: #f8f5f0;
+      color: #5e0f0f;
+      text-align: center;
+      padding: 120px 20px 40px;
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 80px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 22px;
+      margin: 10px 0 0;
     }
 
     footer {
@@ -83,10 +91,6 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Wine and More</h1>
-    <p>Degustazioni e Lezioni, Team Building ed Emozioni</p>
-  </header>
   <nav>
     <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SIAMO</a>
@@ -97,12 +101,17 @@
     <a href="#">FOLLOW US</a>
   </nav>
 
-  <div class="container">
-    <a href="degustazioni-e-lezioni.html" class="box" style="background-image: url('cantina.jpg');">
-      DEGUSTAZIONI E LEZIONI
+  <header>
+    <h1>Wine and More</h1>
+    <p>Degustazioni e Lezioni, Team Building ed Emozioni</p>
+  </header>
+
+  <div class="hero">
+    <a href="degustazioni-e-lezioni.html" class="hero-box" style="background-image: url('cantina.jpg');">
+      <div class="hero-text">DEGUSTAZIONI E LEZIONI</div>
     </a>
-    <a href="team-building.html" class="box" style="background-image: url('team.jpg');">
-      TEAM BUILDING
+    <a href="team-building.html" class="hero-box" style="background-image: url('team.jpg');">
+      <div class="hero-text">TEAM BUILDING</div>
     </a>
   </div>
 
