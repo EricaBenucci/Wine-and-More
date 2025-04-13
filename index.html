@@ -64,22 +64,26 @@
       cursor: pointer;
     }
 
-    header {
-      background-color: #f8f5f0;
-      color: #5e0f0f;
+    .top-title {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      padding: 120px 20px 40px;
+      z-index: 100;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
 
-    header h1 {
+    .top-title h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 80px;
-      margin: 0;
+      margin: 10px 0 5px;
     }
 
-    header p {
+    .top-title p {
       font-size: 22px;
-      margin: 10px 0 0;
+      margin: 0;
     }
 
     footer {
@@ -101,17 +105,17 @@
     <a href="#">FOLLOW US</a>
   </nav>
 
-  <header>
+  <div class="top-title">
     <h1>Wine and More</h1>
     <p>Degustazioni e Lezioni, Team Building ed Emozioni</p>
-  </header>
+  </div>
 
   <div class="hero">
     <a href="degustazioni-e-lezioni.html" class="hero-box" style="background-image: url('cantina.jpg');">
-      <div class="hero-text">DEGUSTAZIONI E LEZIONI</div>
+      <div class="hero-text">Degustazioni e Lezioni</div>
     </a>
     <a href="team-building.html" class="hero-box" style="background-image: url('team.jpg');">
-      <div class="hero-text">TEAM BUILDING</div>
+      <div class="hero-text">Team Building</div>
     </a>
   </div>
 
