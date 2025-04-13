@@ -1,1 +1,115 @@
-Aggiunta pagina degustazioni
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Degustazioni e Lezioni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      background: #f8f5f0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      min-height: calc(100vh - 160px);
+    }
+
+    .section {
+      flex: 1;
+      padding: 40px;
+      color: white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section.left {
+      background-image: url('cantina.jpg');
+    }
+
+    .section.right {
+      background-image: url('insegnante.jpg');
+    }
+
+    .section h2 {
+      color: white;
+      font-family: 'Dancing Script', cursive;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .section details {
+      background-color: rgba(255,255,255,0.85);
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .section summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e0f0f;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SIAMO</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contatti.html">CONTATTACI</a>
+    <a href="#">ITA</a>
+    <a href="#">ENG</a>
+    <a href="#">FOLLOW US</a>
+  </nav>
+
+  <div class="main-content">
+    <div class="section left">
+      <h2>Degustazioni</h2>
+      <!-- Inserire i blocchi <details><summary>...</summary><p>...</p></details> qui -->
+    </div>
+    <div class="section right">
+      <h2>Lezioni</h2>
+      <!-- Inserire i blocchi <details><summary>...</summary><p>...</p></details> qui -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>
+
