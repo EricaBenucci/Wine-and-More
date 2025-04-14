@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contattaci – Wine and More Experiences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      background-image: url('contattaci.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 120px;
+      padding-bottom: 60px;
+      min-height: 100vh;
+      background-color: rgba(255,255,255,0.8);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 60px;
+      color: #5e0f0f;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      max-width: 500px;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #5e0f0f;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7a1c1c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #5e0f0f;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      form {
+        width: 90%;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SIAMO</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contattaci.html">CONTATTACI</a>
+    <a href="#">ITA</a>
+    <a href="#">ENG</a>
+    <a href="#">FOLLOW US</a>
+  </nav>
+
+  <div class="content">
+    <h1>Contattaci</h1>
+    <form>
+      <input type="text" name="nome" placeholder="Nome*" required />
+      <input type="text" name="azienda" placeholder="Azienda*" required />
+      <input type="tel" name="telefono" placeholder="Telefono*" required />
+      <input type="email" name="email" placeholder="E-mail aziendale*" required />
+      <input type="text" name="attivita" placeholder="Attività di interesse* Es. Degustazione, Team Building" required />
+      <textarea name="messaggio" placeholder="Il tuo messaggio*" required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
