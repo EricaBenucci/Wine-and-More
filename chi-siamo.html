@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo – Wine and More</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      background: #5e0f0f; /* sfondo vinaccia */
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .content {
+      padding-top: 80px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .content img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .content p {
+      font-size: 20px;
+      max-width: 800px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e0f0f;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+
+      .content img {
+        max-width: 95%;
+      }
+
+      .content p {
+        font-size: 16px;
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SIAMO</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contatti.html">CONTATTACI</a>
+    <a href="#">ITA</a>
+    <a href="#">ENG</a>
+    <a href="#">FOLLOW US</a>
+  </nav>
+
+  <div class="content">
+    <img src="chisiamo.jpeg" alt="Il nostro team">
+    <p>
+      Un team affiatato con competenze eterogenee in campo di degustazioni, prodotti del territorio, comunicazione e insegnamento.<br>
+      Vi contageremo con il nostro entusiasmo!
+    </p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
