@@ -129,7 +129,9 @@
 
   <div class="content">
     <h1>Contattaci</h1>
-    <form>
+    <form action="https://formsubmit.co/wines.beers.spirits@gmail.com" method="POST">
+      <!-- protezione base anti-spam -->
+      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="nome" placeholder="Nome*" required />
       <input type="text" name="azienda" placeholder="Azienda*" required />
       <input type="tel" name="telefono" placeholder="Telefono*" required />
