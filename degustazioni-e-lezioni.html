@@ -31,6 +31,7 @@
       text-decoration: none;
       margin: 0 20px;
       font-weight: bold;
+      font-size: 18px;
     }
 
     .header-bar {
@@ -69,11 +70,11 @@
     }
 
     .section.left {
-      background-image: url('cantina2.jpg');
+      background-image: url('cantina.jpg');
     }
 
     .section.right {
-      background-image: url('Insegnante.jpg');
+      background-image: url('insegnante.jpg');
     }
 
     .overlay {
@@ -108,6 +109,19 @@
       background-color: #5e0f0f;
       color: white;
     }
+
+    @media (max-width: 768px) {
+      nav a {
+        font-size: 12px;
+        margin: 0 10px;
+      }
+      .header-bar h1 {
+        font-size: 32px;
+      }
+      .header-bar p {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -131,13 +145,11 @@
       <div class="overlay">
         <h2>Degustazioni</h2>
         <details><summary>Il Chianti: i sapori della Toscana</summary><p>Viaggio tra le colline del Chianti per scoprirne il carattere, le uve, e l’equilibrio che lo ha reso celebre. Un assaggio guidato per apprezzarne stile e versatilità.</p></details>
-        <details><summary>Brunello di Montalcino: il toscano</summary><p>Il celebre rosso toscano, pluri-blasonato, è simbolo di eleganza e nobiltà. I suoi profumi intensi e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
-        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
+        <details><summary>Brunello di Montalcino: il rosso blasonato</summary><p>Il celebre rosso toscano, pluri-blasonato, è simbolo di eleganza e nobiltà. I suoi profumi intensi e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
         <details><summary>I vini toscani</summary><p>Panoramica dei grandi rossi e bianchi della Toscana, con focus su territori, vitigni autoctoni e interpretazioni moderne. Degustazione comparata per cogliere differenze e affinità.</p></details>
-        <details><summary>Abbinamenti cibo-vino</summary><p>Le degustazioni partono da informazioni sul contesto del prodotto dando maggiore spazio all’esperienza sensoriale del prodotto stesso.</p></details>
         <details><summary>I vini delle montagne italiane</summary><p>Vini d’alta quota, freschi, verticali, sorprendenti. Analizziamo come l’altitudine e i climi alpini influenzano i profumi, l’acidità e l’eleganza dei vini montani italiani.</p></details>
         <details><summary>I vini delle isole italiane</summary><p>Sicilia, Sardegna e le piccole isole: microclimi, salinità, vitigni autoctoni e identità fortissima. Degustazione di vini solari, marini e profondamente legati al territorio.</p></details>
-        <details><summary>Vino: le eccellenze italiane da nord a sud</summary><p>Un viaggio lungo lo Stivale alla scoperta dei vini simbolo di ogni regione, da Nord a Sud. Storia, curiosità e degustazione guidata delle eccellenze italiane.</p></details>
+        <details><summary>I famosi vini italiani: eccellenze da nord a sud</summary><p>Un viaggio lungo lo Stivale alla scoperta dei vini simbolo di ogni regione, da Nord a Sud. Storia, curiosità e degustazione guidata delle eccellenze italiane.</p></details>
         <details><summary>Grappa, distillato d’eccellenza</summary><p>Dalle vinacce al bicchiere: un viaggio nella storia e nel processo produttivo della grappa, l’unico distillato autenticamente italiano. Un’esperienza sensoriale guidata per scoprire le sue molteplici sfumature, legate a vitigni, territori e metodi di lavorazione.</p></details>
         <details><summary>Olio extravergine di oliva</summary><p>Come riconoscere un vero extravergine di qualità: cultivar, metodi di estrazione, tecniche di assaggio e abbinamenti in cucina. Una degustazione sorprendente e istruttiva.</p></details>
       </div>
@@ -146,6 +158,8 @@
       <div class="overlay">
         <h2>Lezioni</h2>
         <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
+        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
+        <details><summary>Abbinamenti cibo-vino</summary><p>Le degustazioni partono da informazioni sul contesto del prodotto dando maggiore spazio all’esperienza sensoriale del prodotto stesso.</p></details>
       </div>
     </div>
   </div>
