@@ -15,8 +15,8 @@
 
     nav {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       background-color: #5e0f0f;
       position: fixed;
       top: 0;
@@ -29,16 +29,16 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 5px 15px;
       font-weight: bold;
-      font-size: 22px; /* Grande su desktop */
+      font-size: 22px;
     }
 
     .header-bar {
       background-color: #5e0f0f;
       text-align: center;
       padding: 20px 20px 40px;
-      margin-top: 70px; /* spazio per il menu fisso */
+      margin-top: 70px;
     }
 
     .header-bar h1 {
@@ -99,13 +99,15 @@
     @media screen and (max-width: 768px) {
 
       nav {
-        flex-direction: column;
-        padding: 5px 0;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 15px;
+        padding: 10px;
       }
 
       nav a {
-        margin: 5px 0;
-        font-size: 12px; /* più piccole su mobile */
+        font-size: 12px;
+        margin: 4px 8px;
       }
 
       .header-bar h1 {
@@ -113,8 +115,11 @@
       }
 
       .header-bar p {
-        font-size: 16px;
+        font-size: 14px; /* più piccola per stare su una riga */
         padding: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .hero {
