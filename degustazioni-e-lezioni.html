@@ -16,6 +16,7 @@
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background-color: #5e0f0f;
       position: fixed;
@@ -29,7 +30,7 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 5px 15px;
       font-weight: bold;
       font-size: 18px;
     }
@@ -38,8 +39,8 @@
       background-color: #5e0f0f;
       color: white;
       text-align: center;
-      padding: 20px 10px;
-      margin-top: 50px;
+      padding: 20px 10px 40px;
+      margin-top: 70px;
     }
 
     .header-bar h1 {
@@ -50,7 +51,7 @@
 
     .header-bar p {
       font-size: 18px;
-      margin: 5px 0 0 0;
+      margin: 5px 0 0;
     }
 
     .main-content {
@@ -81,6 +82,8 @@
       background-color: rgba(0,0,0,0.5);
       padding: 20px;
       border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     .section h2 {
@@ -88,6 +91,7 @@
       font-size: 36px;
       margin-bottom: 20px;
       color: #fff;
+      text-align: center;
     }
 
     .section details {
@@ -110,13 +114,53 @@
       color: white;
     }
 
-   @media (min-width: 769px) {
-  .box {
-    max-width: 500px;     /* Limita la larghezza massima dei riquadri */
-    margin-left: auto;
-    margin-right: auto;   /* Li centra nella colonna */
-  }
-}
+    /* ------------------ RESPONSIVE ------------------ */
+    @media screen and (max-width: 768px) {
+
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+
+      .header-bar h1 {
+        font-size: 32px;
+      }
+
+      .header-bar p {
+        font-size: 14px;
+        padding: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .main-content {
+        flex-direction: column;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .overlay {
+        padding: 15px;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+
+      .section details {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
