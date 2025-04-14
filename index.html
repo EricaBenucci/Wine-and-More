@@ -95,7 +95,7 @@
       color: white;
     }
 
-    /* ---------------------- MOBILE FRIENDLY ---------------------- */
+    /* MOBILE OPTIMIZATION */
     @media screen and (max-width: 768px) {
 
       nav {
@@ -111,13 +111,13 @@
       }
 
       .header-bar h1 {
-        font-size: 60px;
+        font-size: 50px;
       }
 
       .header-bar p {
-        font-size: 14px; /* più piccola per stare su una riga */
+        font-size: 14px;
         padding: 0 10px;
-        white-space: nowrap;
+        white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -128,7 +128,8 @@
       }
 
       .hero-box {
-        height: 50vh;
+        height: 45vh;
+        min-height: 250px;
       }
 
       .hero-text {
