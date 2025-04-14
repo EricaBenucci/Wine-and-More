@@ -33,10 +33,29 @@
       font-weight: bold;
     }
 
+    .header-bar {
+      background-color: #5e0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+
+    .header-bar h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header-bar p {
+      font-size: 18px;
+      margin: 5px 0 0 0;
+    }
+
     .main-content {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 100px;
+      margin-top: 20px;
       min-height: calc(100vh - 160px);
     }
 
@@ -46,22 +65,28 @@
       color: white;
       background-size: cover;
       background-position: center;
+      position: relative;
     }
 
     .section.left {
-      background-image: url('cantina2.jpg');
+      background-image: url('cantina.jpg');
     }
 
     .section.right {
       background-image: url('insegnante.jpg');
     }
 
+    .overlay {
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
     .section h2 {
-      color: white;
       font-family: 'Dancing Script', cursive;
       font-size: 36px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      color: #fff;
     }
 
     .section details {
@@ -96,14 +121,32 @@
     <a href="#">FOLLOW US</a>
   </nav>
 
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+    <p>Degustazioni e Lezioni. Team Building ed Emozioni</p>
+  </div>
+
   <div class="main-content">
     <div class="section left">
-      <h2>Degustazioni</h2>
-      <!-- Inserire i blocchi <details><summary>...</summary><p>...</p></details> qui -->
+      <div class="overlay">
+        <h2>Degustazioni</h2>
+        <details><summary>Il Chianti: i sapori della Toscana</summary><p>Viaggio tra le colline del Chianti per scoprirne il carattere, le uve, e l’equilibrio che lo ha reso celebre. Un assaggio guidato per apprezzarne stile e versatilità.</p></details>
+        <details><summary>Brunello di Montalcino: il toscano</summary><p>Il celebre rosso toscano, pluri-blasonato, è simbolo di eleganza e nobiltà. I suoi profumi intensi e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
+        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
+        <details><summary>I vini toscani</summary><p>Panoramica dei grandi rossi e bianchi della Toscana, con focus su territori, vitigni autoctoni e interpretazioni moderne. Degustazione comparata per cogliere differenze e affinità.</p></details>
+        <details><summary>Abbinamenti cibo-vino</summary><p>Le degustazioni partono da informazioni sul contesto del prodotto dando maggiore spazio all’esperienza sensoriale del prodotto stesso.</p></details>
+        <details><summary>I vini delle montagne italiane</summary><p>Vini d’alta quota, freschi, verticali, sorprendenti. Analizziamo come l’altitudine e i climi alpini influenzano i profumi, l’acidità e l’eleganza dei vini montani italiani.</p></details>
+        <details><summary>I vini delle isole italiane</summary><p>Sicilia, Sardegna e le piccole isole: microclimi, salinità, vitigni autoctoni e identità fortissima. Degustazione di vini solari, marini e profondamente legati al territorio.</p></details>
+        <details><summary>Vino: le eccellenze italiane da nord a sud</summary><p>Un viaggio lungo lo Stivale alla scoperta dei vini simbolo di ogni regione, da Nord a Sud. Storia, curiosità e degustazione guidata delle eccellenze italiane.</p></details>
+        <details><summary>Grappa, distillato d’eccellenza</summary><p>Dalle vinacce al bicchiere: un viaggio nella storia e nel processo produttivo della grappa, l’unico distillato autenticamente italiano. Un’esperienza sensoriale guidata per scoprire le sue molteplici sfumature, legate a vitigni, territori e metodi di lavorazione.</p></details>
+        <details><summary>Olio extravergine di oliva</summary><p>Come riconoscere un vero extravergine di qualità: cultivar, metodi di estrazione, tecniche di assaggio e abbinamenti in cucina. Una degustazione sorprendente e istruttiva.</p></details>
+      </div>
     </div>
     <div class="section right">
-      <h2>Lezioni</h2>
-      <!-- Inserire i blocchi <details><summary>...</summary><p>...</p></details> qui -->
+      <div class="overlay">
+        <h2>Lezioni</h2>
+        <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
+      </div>
     </div>
   </div>
 
@@ -112,4 +155,3 @@
   </footer>
 </body>
 </html>
-
