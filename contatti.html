@@ -1,3 +1,5 @@
+
+<!-- contattaci.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -39,29 +41,33 @@
     }
 
     .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding-top: 120px;
-      padding-bottom: 60px;
-      min-height: 100vh;
-      background-color: rgba(255,255,255,0.8);
+      margin-top: 100px;
+      background-color: rgba(255,255,255,0.85);
+      padding: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 60px;
+      font-size: 50px;
       color: #5e0f0f;
-      margin-bottom: 30px;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     form {
       display: flex;
       flex-direction: column;
-      width: 90%;
-      max-width: 500px;
       gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #5e0f0f;
     }
 
     input, textarea {
@@ -74,7 +80,7 @@
 
     textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 80px;
     }
 
     button {
@@ -96,27 +102,22 @@
       padding: 10px;
       background-color: #5e0f0f;
       color: white;
+      position: relative;
+      margin-top: 40px;
     }
 
     @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 40px;
-        text-align: center;
-      }
-
-      form {
-        width: 90%;
-      }
-
       nav a {
         font-size: 12px;
         margin: 4px 8px;
+      }
+      h1 {
+        font-size: 36px;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SIAMO</a>
@@ -132,12 +133,25 @@
     <form action="https://formsubmit.co/wines.beers.spirits@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://ericabenucci.github.io/Wine-and-More/grazie.html">
       <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="nome" placeholder="Nome*" required />
-      <input type="text" name="azienda" placeholder="Azienda*" required />
-      <input type="tel" name="telefono" placeholder="Telefono*" required />
-      <input type="email" name="email" placeholder="E-mail aziendale*" required />
-      <input type="text" name="attivita" placeholder="Attività di interesse* Es. Degustazione, Team Building" required />
-      <textarea name="messaggio" placeholder="Il tuo messaggio*" required></textarea>
+
+      <label for="nome">Nome*</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="azienda">Azienda*</label>
+      <input type="text" id="azienda" name="azienda" required>
+
+      <label for="telefono">Telefono*</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="email">E-mail aziendale*</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="attivita">Attività di interesse*</label>
+      <input type="text" id="attivita" name="attivita" required>
+
+      <label for="messaggio">Il tuo messaggio*</label>
+      <textarea id="messaggio" name="messaggio" required></textarea>
+
       <button type="submit">Invia</button>
     </form>
   </div>
@@ -145,7 +159,5 @@
   <footer>
     <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
   </footer>
-
 </body>
 </html>
- 
