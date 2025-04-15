@@ -1,22 +1,45 @@
+<!-- grazie.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grazie!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
       background-color: #f8f5f0;
-      text-align: center;
+      height: 100%;
+    }
+
+    nav {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .container {
+      margin-top: 90px;
+      text-align: center;
+      padding: 20px;
     }
 
     h1 {
@@ -29,21 +52,222 @@
     p {
       font-size: 20px;
       color: #333;
-      max-width: 600px;
-      padding: 0 20px;
+      margin-bottom: 20px;
     }
 
     img {
-      max-width: 90%;
+      max-width: 100%;
       height: auto;
+      max-height: 40vh;
       border-radius: 10px;
-      margin-top: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #5e0f0f;
+      color: white;
+      position: relative;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 16px;
+      }
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Grazie per il messaggio!</h1>
-  <p>Abbiamo ricevuto la tua richiesta e ti risponderemo il prima possibile.<br>Nel frattempo, continua a scoprire il nostro mondo di emozioni e degustazioni!</p>
-  <img src="grazie.jpg" alt="Un brindisi di ringraziamento">
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SIAMO</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contattaci.html">CONTATTACI</a>
+    <a href="#">ITA</a>
+    <a href="#">ENG</a>
+    <a href="#">FOLLOW US</a>
+  </nav>
+
+  <div class="container">
+    <h1>Grazie per il messaggio!</h1>
+    <p>Abbiamo ricevuto la tua richiesta. Ti risponderemo al più presto!</p>
+    <img src="grazie.jpg" alt="Grazie">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  </footer>
+</body>
+</html>
+
+
+<!-- contattaci.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contattaci – Wine and More Experiences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet"/>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      background-image: url('contattaci.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .content {
+      margin-top: 100px;
+      background-color: rgba(255,255,255,0.85);
+      padding: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 50px;
+      color: #5e0f0f;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #5e0f0f;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background-color: #5e0f0f;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7a1c1c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #5e0f0f;
+      color: white;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SIAMO</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="contattaci.html">CONTATTACI</a>
+    <a href="#">ITA</a>
+    <a href="#">ENG</a>
+    <a href="#">FOLLOW US</a>
+  </nav>
+
+  <div class="content">
+    <h1>Contattaci</h1>
+    <form action="https://formsubmit.co/wines.beers.spirits@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://ericabenucci.github.io/Wine-and-More/grazie.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="nome">Nome*</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="azienda">Azienda*</label>
+      <input type="text" id="azienda" name="azienda" required>
+
+      <label for="telefono">Telefono*</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="email">E-mail aziendale*</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="attivita">Attività di interesse*</label>
+      <input type="text" id="attivita" name="attivita" required>
+
+      <label for="messaggio">Il tuo messaggio*</label>
+      <textarea id="messaggio" name="messaggio" required></textarea>
+
+      <button type="submit">Invia</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  </footer>
 </body>
 </html>
