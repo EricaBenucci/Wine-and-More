@@ -1,4 +1,4 @@
- <!DOCTYPE html> 
+<!DOCTYPE html> 
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -89,9 +89,19 @@
     .section h2 {
       font-family: 'Dancing Script', cursive;
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       color: #fff;
       text-align: center;
+    }
+
+    .section .intro {
+      font-size: 18px;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section details {
@@ -112,37 +122,19 @@
     }
 
     /* Numerazione degustazioni */
-    .section.left details:nth-child(2) summary::before { content: "1. "; }
-    .section.left details:nth-child(3) summary::before { content: "2. "; }
-    .section.left details:nth-child(4) summary::before { content: "3. "; }
-    .section.left details:nth-child(5) summary::before { content: "4. "; }
-    .section.left details:nth-child(6) summary::before { content: "5. "; }
-    .section.left details:nth-child(7) summary::before { content: "6. "; }
-    .section.left details:nth-child(8) summary::before { content: "7. "; }
-    .section.left details:nth-child(9) summary::before { content: "8. "; }
+    .section.left details:nth-child(3) summary::before { content: "1. "; }
+    .section.left details:nth-child(4) summary::before { content: "2. "; }
+    .section.left details:nth-child(5) summary::before { content: "3. "; }
+    .section.left details:nth-child(6) summary::before { content: "4. "; }
+    .section.left details:nth-child(7) summary::before { content: "5. "; }
+    .section.left details:nth-child(8) summary::before { content: "6. "; }
+    .section.left details:nth-child(9) summary::before { content: "7. "; }
+    .section.left details:nth-child(10) summary::before { content: "8. "; }
 
     /* Numerazione lezioni */
-    .section.right details:nth-child(2) summary::before { content: "A. "; }
-    .section.right details:nth-child(3) summary::before { content: "B. "; }
-    .section.right details:nth-child(4) summary::before { content: "C. "; }
-
-    .explanation {
-      background-color: #5e0f0f;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .explanation h3 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .explanation p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 30px;
-    }
+    .section.right details:nth-child(3) summary::before { content: "A. "; }
+    .section.right details:nth-child(4) summary::before { content: "B. "; }
+    .section.right details:nth-child(5) summary::before { content: "C. "; }
 
     footer {
       text-align: center;
@@ -192,16 +184,12 @@
         font-size: 28px;
       }
 
+      .section .intro {
+        font-size: 16px;
+      }
+
       .section details {
         font-size: 14px;
-      }
-
-      .explanation h3 {
-        font-size: 22px;
-      }
-
-      .explanation p {
-        font-size: 16px;
       }
     }
   </style>
@@ -226,6 +214,7 @@
     <div class="section left">
       <div class="overlay">
         <h2>Degustazioni</h2>
+        <p class="intro">Le degustazioni offrono una narrazione introduttiva sul contesto storico, culturale e produttivo del vino o del prodotto trattato, con un forte focus sull’esperienza sensoriale: colore, profumo, gusto, sensazioni ed emozioni create.</p>
         <details><summary>Il Chianti: i sapori della Toscana</summary><p>Viaggio virtuale tra le colline del Chianti per scoprire il carattere, le uve e l’equilibrio del suo celebre vino. Un assaggio guidato per apprezzarne stile e peculiarità.</p></details>
         <details><summary>Brunello di Montalcino: il rosso blasonato</summary><p>Il celebre rosso toscano, pluri-premiato, è simbolo di eleganza e nobiltà. I suoi profumi intensi e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
         <details><summary>I vini toscani</summary><p>Panoramica dei grandi rossi e bianchi della Toscana, con focus su territori e vitigni autoctoni. Degustazione per coglierne le caratteristiche e la magia.</p></details>
@@ -236,22 +225,16 @@
         <details><summary>Olio extravergine di oliva</summary><p>Come riconoscere un olio extravergine di qualità: cultivar, metodi di lavorazione, tecniche di assaggio e impieghi in cucina. Una degustazione sorprendente e istruttiva.</p></details>
       </div>
     </div>
+
     <div class="section right">
       <div class="overlay">
         <h2>Lezioni</h2>
+        <p class="intro">Le lezioni forniscono nozioni teoriche per comprendere il prodotto in profondità. La parte didattica è seguita da un assaggio guidato. Se richiesto, può essere incluso un test finale con attestato di partecipazione.</p>
         <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
         <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
         <details><summary>Abbinamenti cibo-vino</summary><p>Scopri le regole e il metodo per esaltare il gusto a tavola, scegliere il vino adatto ad ogni pietanza e comprendere come costruire un menù con vini abbinati.</p></details>
       </div>
     </div>
-  </div>
-
-  <div class="explanation">
-    <h3>DEGUSTAZIONI</h3>
-    <p>Le degustazioni offrono una narrazione introduttiva sul contesto storico, culturale e produttivo del vino o del prodotto trattato, con un forte focus sull’esperienza sensoriale: colore, profumo, gusto, sensazioni ed emozioni create.</p>
-
-    <h3>LEZIONI</h3>
-    <p>Le lezioni forniscono nozioni teoriche per comprendere il prodotto in profondità. La parte didattica è seguita da un assaggio guidato. Se richiesto, può essere incluso un test finale con attestato di partecipazione.</p>
   </div>
 
   <footer>
