@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chi Sono – Wine and More</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet" />
   <style>
     body, html {
       margin: 0;
@@ -39,23 +39,46 @@
       font-size: 18px;
     }
 
+    nav a.active-lang {
+      text-decoration: underline;
+    }
+
+    .header-bar {
+      background-color: #5e0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px 40px;
+      margin-top: 70px;
+    }
+
+    .header-bar h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header-bar p {
+      font-size: 18px;
+      margin: 5px 0 0;
+    }
+
     .content {
-      padding-top: 120px;
-      padding-bottom: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      background-color: rgba(0,0,0,0.5);
-      min-height: 100vh;
+      padding: 40px 20px 60px;
+      background-color: rgba(0, 0, 0, 0.4);
+      min-height: calc(100vh - 160px);
     }
 
     .content p {
       font-size: 22px;
       max-width: 800px;
-      padding: 0 20px;
       line-height: 1.6;
       background-color: rgba(255,255,255,0.1);
+      padding: 20px;
       border-radius: 10px;
     }
 
@@ -79,9 +102,18 @@
         margin: 4px 8px;
       }
 
+      .header-bar h1 {
+        font-size: 32px;
+      }
+
+      .header-bar p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
       .content p {
         font-size: 16px;
-        padding: 0 15px;
+        padding: 15px;
       }
     }
   </style>
@@ -92,18 +124,23 @@
     <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SONO</a>
     <a href="degustazioni-e-lezioni.html">DEGUSTAZIONI</a>
-    <a href="degustazioni-e-lezioni.html">LEZIONI</a>
+    <a href="lezioni.html">LEZIONI</a>
     <a href="curiosita.html">LO SAPEVI CHE?</a>
     <a href="contattaci.html">CONTATTACI</a>
-    <a href="chi-siamo.html">ITA</a>
+    <a href="chi-siamo.html" class="active-lang">ITA</a>
     <a href="chi-siamo-en.html">ENG</a>
     <a href="#">FOLLOW US</a>
   </nav>
 
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+    <p>Chi sono</p>
+  </div>
+
   <div class="content">
     <p>
-      Sono docente e mi occupo di formazione e divulgazione nel mondo del vino da oltre dieci anni. Amo raccontare il mondo del gusto in modo chiaro e coinvolgente, con degustazioni coinvolgenti e lezioni che vi faranno portare a casa nuove idee.<br><br>
-     
+      Un team affiatato con competenze eterogenee in campo di degustazioni, prodotti del territorio, comunicazione e insegnamento.<br><br>
+      Vi contageremo con il nostro entusiasmo!
     </p>
   </div>
 
