@@ -1,173 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine and More Experiences – Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      height: 100%;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #5e0f0f;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 15px;
-      font-weight: bold;
-      font-size: 22px;
-    }
-
-    .header-bar {
-      background-color: #5e0f0f;
-      text-align: center;
-      padding: 20px 20px 40px;
-      margin-top: 70px;
-    }
-
-    .header-bar h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 120px;
-      margin: 0;
-      color: white;
-    }
-
-    .header-bar p {
-      font-size: 24px;
-      color: white;
-      margin: 10px 0 0;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: row;
-      height: calc(100vh - 200px);
-    }
-
-    .hero-box {
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .hero-text {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px 40px;
-      border-radius: 10px;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 30px;
-      color: #5e0f0f;
-      text-align: center;
-      transition: transform 0.3s ease;
-      text-transform: uppercase;
-    }
-
-    .hero-text:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #5e0f0f;
-      color: white;
-    }
-
-    /* MOBILE OPTIMIZATION */
-    @media screen and (max-width: 768px) {
-
-      nav {
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px 15px;
-        padding: 10px;
-      }
-
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
-
-      .header-bar h1 {
-        font-size: 50px;
-      }
-
-      .header-bar p {
-        font-size: 14px;
-        padding: 0 10px;
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .hero {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .hero-box {
-        height: 45vh;
-        min-height: 250px;
-      }
-
-      .hero-text {
-        font-size: 20px;
-        padding: 15px 30px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wine and More Experiences</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index-eng.html">Home</a></li>
+        <li><a href="degustazioni-eng.html">Tastings</a></li>
+        <li><a href="lezioni-eng.html">Lessons</a></li>
+        <li><a href="curiosita-eng.html">Curiosities</a></li>
+        <li><a href="contatti-eng.html">Contact</a></li>
+        <li><a href="index.html">ITA</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="index-en.html">HOME</a>
-    <a href="chi-siamo-en.html">ABOUT US</a>
-    <a href="gallery.html">GALLERY</a>
-    <a href="contattaci.html">CONTACT US</a>
-    <a href="index.html">ITA</a>
-    <a href="#">ENG</a>
-    <a href="#">FOLLOW US</a>
-  </nav>
-
-  <div class="header-bar">
-    <h1>Wine and More Experiences</h1>
-    <p>Wine Tastings and Classes. Team Building and Emotions</p>
-  </div>
-
-  <div class="hero">
-  <a href="degustazioni-e-lezioni-eng.html" class="hero-box" style="background-image: url('cantina.jpg');">
-    <div class="hero-text">Tastings and Classes</div>
-  </a>
-  <a href="team-building-en.html" class="hero-box" style="background-image: url('team.jpg');">
-    <div class="hero-text">Team Building</div>
-  </a>
-</div>
+  <main class="home-container">
+    <section class="intro">
+      <h1>Wine and More Experiences</h1>
+      <p>Tastings and lessons designed for those who want to discover the authentic soul of Italian wine. Tailor-made experiences led by a professional sommelier, perfect for tourists, companies, and wine lovers.</p>
+    </section>
+    <section class="highlights">
+      <div class="highlight">
+        <h2><a href="degustazioni-eng.html">Tastings</a></h2>
+        <p>Explore Tuscan and Italian flavors with guided themed tastings, directly where you are staying.</p>
+      </div>
+      <div class="highlight">
+        <h2><a href="lezioni-eng.html">Lessons</a></h2>
+        <p>Deepen your knowledge with engaging lessons on wine, EVO oil, and spirits — certificate available.</p>
+      </div>
+      <div class="highlight">
+        <h2><a href="curiosita-eng.html">Curiosities</a></h2>
+        <p>Fun facts, stories and insights from the wine world to inspire you and awaken your tasting curiosity.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
+    <p>&copy; 2025 Wine and More Experiences</p>
   </footer>
-
 </body>
 </html>
