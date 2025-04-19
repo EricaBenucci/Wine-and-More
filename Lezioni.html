@@ -2,16 +2,47 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wine and More – Lezioni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wine and More – Degustazioni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
       height: 100%;
-      background: #5e0f0f;
+      background-color: #5e0f0f;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('docente2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
 
     nav {
@@ -35,9 +66,12 @@
       font-size: 18px;
     }
 
+    nav a.active-lang {
+      text-decoration: underline;
+    }
+
     .header-bar {
       background-color: #5e0f0f;
-      color: white;
       text-align: center;
       padding: 20px 10px 40px;
       margin-top: 70px;
@@ -47,6 +81,7 @@
       font-family: 'Dancing Script', cursive;
       font-size: 48px;
       margin: 0;
+      color: white;
     }
 
     .header-bar p {
@@ -57,43 +92,31 @@
     .main-content {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
-      min-height: calc(100vh - 160px);
+      padding: 40px 20px;
     }
 
     .section {
       width: 100%;
-      max-width: 900px;
-      padding: 40px;
-      color: white;
-      background-color: #5e0f0f;
-      background-image: url('Insegnante.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
+      max-width: 1000px;
     }
 
     .overlay {
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 700px;
-      margin: 0 auto;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 12px;
     }
 
     .section h2 {
       font-family: 'Dancing Script', cursive;
       font-size: 36px;
       margin-bottom: 10px;
-      color: #fff;
+      color: white;
       text-align: center;
     }
 
     .section .intro {
       font-size: 18px;
       text-align: center;
-      color: white;
       margin-bottom: 20px;
     }
 
@@ -113,10 +136,6 @@
     .section summary::marker {
       content: "";
     }
-
-    .section details:nth-of-type(1) summary::before { content: "1. "; }
-    .section details:nth-of-type(2) summary::before { content: "2. "; }
-    .section details:nth-of-type(3) summary::before { content: "3. "; }
 
     footer {
       text-align: center;
@@ -145,17 +164,6 @@
       .header-bar p {
         font-size: 14px;
         padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .section {
-        padding: 20px;
-      }
-
-      .overlay {
-        padding: 15px;
       }
 
       .section h2 {
@@ -164,6 +172,10 @@
 
       .section .intro {
         font-size: 16px;
+      }
+
+      .overlay {
+        padding: 20px;
       }
 
       .section details {
@@ -176,12 +188,11 @@
   <nav>
     <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SONO</a>
-    <a href="degustazioni-e-lezioni.html">DEGUSTAZIONI</a>
+    <a href="lezioni.html">LEZIONI</a>
     <a href="curiosita.html">LO SAPEVI CHE?</a>
     <a href="contattaci.html">CONTATTI</a>
-    <a href="#">ITA</a>
-    <a href="lezioni-eng.html">ENG</a>
-    <a href="#">FOLLOW US</a>
+    <a href="degustazioni-e-lezioni-eng.html">ENG</a>
+    <a href="#">SEGUIMI</a>
   </nav>
 
   <div class="header-bar">
@@ -192,14 +203,17 @@
   <div class="main-content">
     <div class="section">
       <div class="overlay">
-        <h2>Lezioni</h2>
-        <p class="intro">Le lezioni forniscono nozioni teoriche per comprendere il prodotto in profondità. La parte didattica è seguita da un assaggio guidato. Se richiesto, può essere incluso un test finale con attestato di partecipazione.</p>
-
-        <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
-
-        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
-
-        <details><summary>Abbinamenti cibo-vino</summary><p>Scopri le regole e il metodo per esaltare il gusto a tavola, scegliere il vino adatto ad ogni pietanza e comprendere come costruire un menù con vini abbinati.</p></details>
+        <h2>Degustazioni</h2>
+        <p class="intro">Le degustazioni offrono una narrazione introduttiva sul contesto storico, culturale e produttivo del vino o del prodotto trattato, con un forte focus sull’esperienza sensoriale: colore, profumo, gusto, sensazioni ed emozioni create.</p>
+        
+        <details><summary>1. Il Chianti: i sapori della Toscana</summary><p>Viaggio virtuale tra le colline del Chianti per scoprire il carattere, le uve e l’equilibrio del suo celebre vino. Un assaggio guidato per apprezzarne stile e peculiarità.</p></details>
+        <details><summary>2. Brunello di Montalcino: il rosso blasonato</summary><p>Il celebre rosso toscano, pluri-premiato, è simbolo di eleganza e nobiltà. I suoi profumi intensi e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
+        <details><summary>3. I vini toscani</summary><p>Panoramica dei grandi rossi e bianchi della Toscana, con focus su territori e vitigni autoctoni. Degustazione per coglierne le caratteristiche e la magia.</p></details>
+        <details><summary>4. I vini delle montagne italiane</summary><p>Vini d’alta quota e di luoghi sorprendenti. Analizziamo come l’altitudine e i climi montani influenzano i profumi, l’acidità e l’eleganza dei vini.</p></details>
+        <details><summary>5. I vini delle isole italiane</summary><p>Un viaggio tra profumi marini, suoli vulcanici e microclimi irripetibili. Degustazione di vini solari, salini e profondamente legati ai territori insulari da cui provengono.</p></details>
+        <details><summary>6. I famosi vini italiani: eccellenze da nord a sud</summary><p>Un viaggio lungo la Penisola alla scoperta di alcuni vini simbolo, da Nord a Sud. Storia, curiosità e degustazione guidata di eccellenze italiane.</p></details>
+        <details><summary>7. Grappa, distillato d’eccellenza</summary><p>Dalle vinacce alla magia nel calice: un viaggio nella storia e nel processo produttivo della grappa, l’unico distillato esclusivamente italiano. Un’esperienza sensoriale guidata per scoprire le sue molteplici sfumature, legate a vitigni, territori e metodi di lavorazione.</p></details>
+        <details><summary>8. Olio extravergine di oliva</summary><p>Come riconoscere un olio extravergine di qualità: cultivar, metodi di lavorazione, tecniche di assaggio e impieghi in cucina. Una degustazione sorprendente e istruttiva.</p></details>
       </div>
     </div>
   </div>
