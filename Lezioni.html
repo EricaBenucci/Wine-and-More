@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine and More – Degustazioni e Lezioni</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine and More – Lezioni</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <style>
     body, html {
@@ -56,28 +56,27 @@
 
     .main-content {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       margin-top: 20px;
       min-height: calc(100vh - 160px);
     }
 
     .section {
-      flex: 1;
+      width: 100%;
+      max-width: 900px;
       padding: 40px;
       color: white;
+      background-image: url('Insegnante.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
-    }
-    .section.right {
-      background-image: url('Insegnante.jpg');
     }
 
     .overlay {
       background-color: rgba(0,0,0,0.5);
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
@@ -94,9 +93,6 @@
       text-align: center;
       color: white;
       margin-bottom: 20px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .section details {
@@ -113,110 +109,15 @@
     }
 
     .section summary::marker {
-      content: "";
+      content: \"\";
     }
 
-    /* Numerazione degustazioni */
-    .section.left details:nth-child(3) summary::before { content: "1. "; }
-    .section.left details:nth-child(4) summary::before { content: "2. "; }
-    .section.left details:nth-child(5) summary::before { content: "3. "; }
-    .section.left details:nth-child(6) summary::before { content: "4. "; }
-    .section.left details:nth-child(7) summary::before { content: "5. "; }
-    .section.left details:nth-child(8) summary::before { content: "6. "; }
-    .section.left details:nth-child(9) summary::before { content: "7. "; }
-    .section.left details:nth-child(10) summary::before { content: "8. "; }
-
     /* Numerazione lezioni */
-    .section.right details:nth-child(3) summary::before { content: "A. "; }
-    .section.right details:nth-child(4) summary::before { content: "B. "; }
-    .section.right details:nth-child(5) summary::before { content: "C. "; }
+    .section details:nth-of-type(1) summary::before { content: \"A. \"; }
+    .section details:nth-of-type(2) summary::before { content: \"B. \"; }
+    .section details:nth-of-type(3) summary::before { content: \"C. \"; }
 
     footer {
       text-align: center;
       padding: 20px;
       background-color: #5e0f0f;
-      color: #ffffff;
-    }
-
-    @media screen and (max-width: 768px) {
-      nav {
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px 10px;
-        padding: 10px;
-      }
-
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
-
-      .header-bar h1 {
-        font-size: 32px;
-      }
-
-      .header-bar p {
-        font-size: 14px;
-        padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .main-content {
-        flex-direction: column;
-      }
-
-      .section {
-        padding: 20px;
-      }
-
-      .overlay {
-        padding: 15px;
-      }
-
-      .section h2 {
-        font-size: 28px;
-      }
-
-      .section .intro {
-        font-size: 16px;
-      }
-
-      .section details {
-        font-size: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="chi-siamo.html">CHI SIAMO</a>
-    <a href="gallery.html">LO SAPEVI CHE?</a>
-    <a href="contattaci.html">CONTATTACI</a>
-    <a href="#">ITA</a>
-    <a href="lezioni-eng.html">ENG</a>
-    <a href="#">FOLLOW US</a>
-  </nav>
-
-  <div class="header-bar">
-    <h1>Wine and More Experiences</h1>
-    <p>Degustazioni e Lezioni. Team Building ed Emozioni</p>
-  </div>
-
-      <div class="overlay">
-        <h2>Lezioni</h2>
-        <p class="intro">Le lezioni forniscono nozioni teoriche per comprendere il prodotto in profondità. La parte didattica è seguita da un assaggio guidato. Se richiesto, può essere incluso un test finale con attestato di partecipazione.</p>
-        <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
-        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
-        <details><summary>Abbinamenti cibo-vino</summary><p>Scopri le regole e il metodo per esaltare il gusto a tavola, scegliere il vino adatto ad ogni pietanza e comprendere come costruire un menù con vini abbinati.</p></details>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
-  </footer>
-</body>
-</html>
