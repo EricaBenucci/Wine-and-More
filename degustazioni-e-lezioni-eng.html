@@ -1,18 +1,17 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine and More – Tastings and Classes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine and More – Tastings</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <style>
-    /* identico al tuo CSS attuale – già ottimizzato per PC e mobile */
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
       height: 100%;
-      background: #f8f5f0;
+      background: #5e0f0f;
     }
 
     nav {
@@ -57,33 +56,29 @@
 
     .main-content {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
       margin-top: 20px;
       min-height: calc(100vh - 160px);
     }
 
     .section {
-      flex: 1;
+      width: 100%;
+      max-width: 900px;
       padding: 40px;
       color: white;
+      background-color: #5e0f0f;
+      background-image: url('cantina.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       position: relative;
-    }
-
-    .section.left {
-      background-image: url('cantina.jpg');
-    }
-
-    .section.right {
-      background-image: url('Insegnante.jpg');
     }
 
     .overlay {
       background-color: rgba(0,0,0,0.5);
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
@@ -100,9 +95,6 @@
       text-align: center;
       color: white;
       margin-bottom: 20px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .section details {
@@ -121,19 +113,6 @@
     .section summary::marker {
       content: "";
     }
-
-    .section.left details:nth-child(3) summary::before { content: "1. "; }
-    .section.left details:nth-child(4) summary::before { content: "2. "; }
-    .section.left details:nth-child(5) summary::before { content: "3. "; }
-    .section.left details:nth-child(6) summary::before { content: "4. "; }
-    .section.left details:nth-child(7) summary::before { content: "5. "; }
-    .section.left details:nth-child(8) summary::before { content: "6. "; }
-    .section.left details:nth-child(9) summary::before { content: "7. "; }
-    .section.left details:nth-child(10) summary::before { content: "8. "; }
-
-    .section.right details:nth-child(3) summary::before { content: "A. "; }
-    .section.right details:nth-child(4) summary::before { content: "B. "; }
-    .section.right details:nth-child(5) summary::before { content: "C. "; }
 
     footer {
       text-align: center;
@@ -167,10 +146,6 @@
         text-overflow: ellipsis;
       }
 
-      .main-content {
-        flex-direction: column;
-      }
-
       .section {
         padding: 20px;
       }
@@ -196,44 +171,33 @@
 <body>
   <nav>
     <a href="index.html">HOME</a>
-    <a href="chi-siamo.html">ABOUT US</a>
-    <a href="gallery.html">GALLERY</a>
-    <a href="contattaci.html">CONTACT US</a>
+    <a href="about.html">ABOUT</a>
+    <a href="lezioni-eng.html">LESSONS</a>
+    <a href="curiosita-eng.html">DID YOU KNOW?</a>
+    <a href="contact.html">CONTACT</a>
     <a href="degustazioni-e-lezioni.html">ITA</a>
-<a href="degustazioni-e-lezioni-eng.html">ENG</a>
     <a href="#">FOLLOW US</a>
   </nav>
 
   <div class="header-bar">
     <h1>Wine and More Experiences</h1>
-    <p>Tastings and Classes. Team Building and Emotions</p>
+    <p>Tastings and Lessons</p>
   </div>
 
   <div class="main-content">
-    <div class="section left">
+    <div class="section">
       <div class="overlay">
         <h2>Tastings</h2>
-        <p class="intro">Tastings include an introductory narration about the historical, cultural and production background of the wine or product, with a strong focus on the sensory experience: color, aromas, taste, tactile sensations and emotions.</p>
+        <p class="intro">Each tasting begins with an introduction to the historical, cultural and production background of the product, followed by a strong focus on the sensory experience: color, aromas, taste, sensations and emotions.</p>
 
-        <details><summary>Chianti: the flavors of Tuscany</summary><p>A virtual journey through the Chianti hills to discover the character, grapes, and balance of this iconic wine. A guided tasting to appreciate its style and uniqueness.</p></details>
-        <details><summary>Brunello di Montalcino: the noble red</summary><p>This prestigious Tuscan wine is a symbol of elegance and refinement. Its intense aromas and exclusivity have made it a worldwide icon.</p></details>
-        <details><summary>Tuscan wines</summary><p>An overview of Tuscany’s finest reds and whites, with a focus on native grape varieties and terroirs. A tasting to reveal their character and magic.</p></details>
-        <details><summary>Wines from the Italian mountains</summary><p>High-altitude wines from unique places. We explore how elevation and mountain climates influence aromas, acidity and elegance.</p></details>
-        <details><summary>Wines from the Italian islands</summary><p>A journey through marine aromas, volcanic soils, and one-of-a-kind microclimates. A tasting of sunny, salty wines deeply connected to their island origins.</p></details>
-        <details><summary>Iconic Italian wines: excellence from North to South</summary><p>A journey along the Italian peninsula to discover symbolic wines. History, stories, and a guided tasting of some of Italy’s most celebrated labels.</p></details>
-        <details><summary>Grappa, an excellence of Italian distillation</summary><p>From grape skins to glass: a journey into the history and production of grappa, the only distillate that’s purely Italian. A guided sensory experience to explore its many nuances and styles.</p></details>
-        <details><summary>Extra virgin olive oil</summary><p>How to recognize a quality EVOO: cultivars, production techniques, tasting methods and food pairings. A surprising and educational experience.</p></details>
-      </div>
-    </div>
-
-    <div class="section right">
-      <div class="overlay">
-        <h2>Classes</h2>
-        <p class="intro">Theoretical knowledge to understand wine and other products in depth. Lessons are followed by a guided tasting. If requested, a final test with a certificate of participation can be included.</p>
-
-        <details><summary>Wine and tasting technique</summary><p>An introduction to professional tasting: how to taste, which senses are involved, how to read sensations and recognize quality and faults.</p></details>
-        <details><summary>Chianti uncovered</summary><p>Chianti has fascinating origins and a deep-rooted tradition. It tells the story of hills, soils, microclimates, and native grapes. A guided experience to understand labels and types.</p></details>
-        <details><summary>Food and wine pairing</summary><p>Discover rules and methods to enhance food through wine, choose the right pairing, and create a harmonious menu.</p></details>
+        <details><summary>1. Chianti: Flavours of Tuscany</summary><p>A virtual journey through the Chianti hills to explore the personality, grapes and balance of this renowned wine. A guided tasting to appreciate its style and character.</p></details>
+        <details><summary>2. Brunello di Montalcino: the iconic red</summary><p>This award-winning Tuscan red is a symbol of elegance and nobility. Its rich aromas and refined profile have earned it international acclaim.</p></details>
+        <details><summary>3. Tuscan wines</summary><p>A panorama of Tuscany's great reds and whites, focusing on native grape varieties and terroirs. A tasting to discover their uniqueness and beauty.</p></details>
+        <details><summary>4. Wines from the Italian Alps</summary><p>Wines from high altitudes and unique landscapes. Discover how mountain climates influence aroma, freshness and finesse.</p></details>
+        <details><summary>5. Wines from the Italian Islands</summary><p>A journey through volcanic soils, marine breezes and unique microclimates. A tasting of sun-kissed, mineral-rich wines deeply rooted in their island origins.</p></details>
+        <details><summary>6. Famous Italian Wines: excellence from North to South</summary><p>A tour of Italy through some of its most iconic wines. Discover the stories, peculiarities and taste of Italy’s wine heritage.</p></details>
+        <details><summary>7. Grappa: the Italian spirit</summary><p>From grape skins to the glass: a journey into the history and production of Italy’s most iconic distillate. A guided tasting to explore its nuances and regional identities.</p></details>
+        <details><summary>8. Extra Virgin Olive Oil</summary><p>Learn how to recognize quality EVOO: varieties, production methods, tasting techniques and food pairings. An eye-opening and delicious experience.</p></details>
       </div>
     </div>
   </div>
