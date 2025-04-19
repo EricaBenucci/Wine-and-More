@@ -6,12 +6,15 @@
   <title>Wine and More – Lessons</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
+
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
       height: 100%;
       background: #5e0f0f;
+      color: white;
     }
 
     nav {
@@ -61,16 +64,12 @@
     .main-content {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
-      min-height: calc(100vh - 160px);
+      padding: 40px 20px;
     }
 
     .section {
       width: 100%;
-      max-width: 900px;
-      padding: 40px;
-      color: white;
-      background-color: #5e0f0f;
+      max-width: 1000px;
       background-image: url('Insegnante.jpg');
       background-size: cover;
       background-position: center;
@@ -80,53 +79,50 @@
 
     .overlay {
       background-color: rgba(0,0,0,0.5);
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
-      max-width: 700px;
-      margin: 0 auto;
     }
 
     .section h2 {
       font-family: 'Dancing Script', cursive;
       font-size: 36px;
-      margin-bottom: 10px;
-      color: #fff;
       text-align: center;
-    }
-
-    .section .intro {
-      font-size: 18px;
-      text-align: center;
-      color: white;
       margin-bottom: 20px;
     }
 
-    .section details {
+    .intro {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    details {
       background-color: rgba(255,255,255,0.85);
       color: #333;
       padding: 10px 15px;
       border-radius: 8px;
-      margin-bottom: 15px;
+      margin: 0 auto 15px;
+      max-width: 700px;
     }
 
-    .section summary {
+    summary {
       font-weight: bold;
       cursor: pointer;
     }
 
-    .section summary::marker {
+    summary::marker {
       content: "";
     }
 
-    .section details:nth-of-type(1) summary::before { content: "1. "; }
-    .section details:nth-of-type(2) summary::before { content: "2. "; }
-    .section details:nth-of-type(3) summary::before { content: "3. "; }
+    details:nth-of-type(1) summary::before { content: "1. "; }
+    details:nth-of-type(2) summary::before { content: "2. "; }
+    details:nth-of-type(3) summary::before { content: "3. "; }
 
     footer {
       text-align: center;
       padding: 20px;
       background-color: #5e0f0f;
-      color: #ffffff;
+      color: white;
     }
 
     @media screen and (max-width: 768px) {
@@ -148,42 +144,36 @@
 
       .header-bar p {
         font-size: 14px;
-        padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .section {
-        padding: 20px;
       }
 
       .overlay {
-        padding: 15px;
+        padding: 20px;
       }
 
       .section h2 {
         font-size: 28px;
       }
 
-      .section .intro {
+      .intro {
         font-size: 16px;
       }
 
-      .section details {
+      details {
         font-size: 14px;
+        max-width: 95%;
       }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html">HOME</a>
+    <a href="index-en.html">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="degustazioni-e-lezioni-eng.html">TASTINGS</a>
     <a href="curiosita-eng.html">DID YOU KNOW?</a>
     <a href="contact.html">CONTACT</a>
-    <a href="lezioni.html" class="active-lang">ITA</a>
+    <a href="lezioni.html">ITA</a>
+    <a href="#" class="active-lang">ENG</a>
     <a href="#">FOLLOW US</a>
   </nav>
 
@@ -196,7 +186,9 @@
     <div class="section">
       <div class="overlay">
         <h2>Lessons</h2>
-        <p class="intro">These sessions provide key theoretical knowledge to understand wine and beer more deeply. Each lesson ends with a guided tasting. If requested, a short final test and participation certificate can be included.</p>
+        <p class="intro">
+          These sessions provide key theoretical knowledge to understand wine and beer more deeply. Each lesson ends with a guided tasting. If requested, a short final test and participation certificate can be included.
+        </p>
 
         <details><summary>Wine and Tasting Techniques</summary><p>An introduction to professional tasting: how to evaluate appearance, aromas, taste and structure; how to recognize quality and identify faults.</p></details>
 
