@@ -1,209 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wine and More – Tastings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      height: 100%;
-      background: #5e0f0f;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine and More – Tastings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            height: 100%;
+            background-image: url('docente2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #5e0f0f;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #5e0f0f;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    .header-bar {
-      background-color: #5e0f0f;
-      color: white;
-      text-align: center;
-      padding: 20px 10px 40px;
-      margin-top: 70px;
-    }
+        nav a.active-lang {
+            text-decoration: underline;
+        }
 
-    .header-bar h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 48px;
-      margin: 0;
-    }
+        .header-bar {
+            background-color: #5e0f0f;
+            color: white;
+            text-align: center;
+            padding: 20px 10px 40px;
+            margin-top: 70px;
+        }
 
-    .header-bar p {
-      font-size: 18px;
-      margin: 5px 0 0;
-    }
+        .header-bar h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            margin: 0;
+        }
 
-    .main-content {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      min-height: calc(100vh - 160px);
-    }
+        .header-bar p {
+            font-size: 18px;
+            margin: 5px 0 0;
+        }
 
-    .section {
-      width: 100%;
-      max-width: 900px;
-      padding: 40px;
-      color: white;
-      background-color: #5e0f0f;
-      background-image: url('cantina.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-    }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            min-height: calc(100vh - 160px);
+        }
 
-    .overlay {
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+        .section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px;
+        }
 
-    .section h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #fff;
-      text-align: center;
-    }
+        .overlay {
+            background-color: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    .section .intro {
-      font-size: 18px;
-      text-align: center;
-      color: white;
-      margin-bottom: 20px;
-    }
+        .section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+        }
 
-    .section details {
-      background-color: rgba(255,255,255,0.85);
-      color: #333;
-      padding: 10px 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
+        .section .intro {
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
 
-    .section summary {
-      font-weight: bold;
-      cursor: pointer;
-    }
+        .section details {
+            background-color: rgba(255,255,255,0.85);
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
 
-    .section summary::marker {
-      content: "";
-    }
+        .section summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #5e0f0f;
-      color: #ffffff;
-    }
+        .section summary::marker {
+            content: "";
+        }
 
-    @media screen and (max-width: 768px) {
-      nav {
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px 10px;
-        padding: 10px;
-      }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5e0f0f;
+            color: #ffffff;
+        }
 
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+                gap: 5px 10px;
+                padding: 10px;
+            }
 
-      .header-bar h1 {
-        font-size: 32px;
-      }
+            nav a {
+                font-size: 12px;
+                margin: 4px 8px;
+            }
 
-      .header-bar p {
-        font-size: 14px;
-        padding: 0 10px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+            .header-bar h1 {
+                font-size: 32px;
+            }
 
-      .section {
-        padding: 20px;
-      }
+            .header-bar p {
+                font-size: 14px;
+                padding: 0 10px;
+            }
 
-      .overlay {
-        padding: 15px;
-      }
+            .section {
+                padding: 20px;
+            }
 
-      .section h2 {
-        font-size: 28px;
-      }
+            .overlay {
+                padding: 15px;
+            }
 
-      .section .intro {
-        font-size: 16px;
-      }
+            .section h2 {
+                font-size: 28px;
+            }
 
-      .section details {
-        font-size: 14px;
-      }
-    }
-  </style>
+            .section .intro {
+                font-size: 16px;
+            }
+
+            .section details {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="lezioni-eng.html">LESSONS</a>
-    <a href="curiosita-eng.html">DID YOU KNOW?</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="degustazioni-e-lezioni.html">ITA</a>
-    <a href="#">FOLLOW US</a>
-  </nav>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about-eng.html">ABOUT</a>
+        <a href="lessons-eng.html">LESSONS</a>
+        <a href="did-you-know-eng.html">DID YOU KNOW?</a>
+        <a href="contact-eng.html">CONTACT</a>
+        <a href="degustazioni-e-lezioni.html">ITA</a>
+        <a href="#" class="active-lang">ENG</a>
+        <a href="#">FOLLOW US</a>
+    </nav>
 
-  <div class="header-bar">
-    <h1>Wine and More Experiences</h1>
-    <p>Tastings and Lessons</p>
-  </div>
-
-  <div class="main-content">
-    <div class="section">
-      <div class="overlay">
-        <h2>Tastings</h2>
-        <p class="intro">Each tasting begins with an introduction to the historical, cultural and production background of the product, followed by a strong focus on the sensory experience: color, aromas, taste, sensations and emotions.</p>
-
-        <details><summary>1. Chianti: Flavours of Tuscany</summary><p>A virtual journey through the Chianti hills to explore the personality, grapes and balance of this renowned wine. A guided tasting to appreciate its style and character.</p></details>
-        <details><summary>2. Brunello di Montalcino: the iconic red</summary><p>This award-winning Tuscan red is a symbol of elegance and nobility. Its rich aromas and refined profile have earned it international acclaim.</p></details>
-        <details><summary>3. Tuscan wines</summary><p>A panorama of Tuscany's great reds and whites, focusing on native grape varieties and terroirs. A tasting to discover their uniqueness and beauty.</p></details>
-        <details><summary>4. Wines from the Italian Alps</summary><p>Wines from high altitudes and unique landscapes. Discover how mountain climates influence aroma, freshness and finesse.</p></details>
-        <details><summary>5. Wines from the Italian Islands</summary><p>A journey through volcanic soils, marine breezes and unique microclimates. A tasting of sun-kissed, mineral-rich wines deeply rooted in their island origins.</p></details>
-        <details><summary>6. Famous Italian Wines: excellence from North to South</summary><p>A tour of Italy through some of its most iconic wines. Discover the stories, peculiarities and taste of Italy’s wine heritage.</p></details>
-        <details><summary>7. Grappa: the Italian spirit</summary><p>From grape skins to the glass: a journey into the history and production of Italy’s most iconic distillate. A guided tasting to explore its nuances and regional identities.</p></details>
-        <details><summary>8. Extra Virgin Olive Oil</summary><p>Learn how to recognize quality EVOO: varieties, production methods, tasting techniques and food pairings. An eye-opening and delicious experience.</p></details>
-      </div>
+    <div class="header-bar">
+        <h1>Wine and More Experiences</h1>
+        <p>Tastings and Lessons</p>
     </div>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
-  </footer>
+    <div class="main-content">
+        <div class="section">
+            <div class="overlay">
+                <h2>Tastings</h2>
+                <p class="intro">Each tasting begins with an introduction to the historical, cultural and production background of the product, followed by a strong focus on the sensory experience: color, aromas, taste, sensations and emotions.</p>
+
+                <details><summary>1. Chianti: Flavours of Tuscany</summary><p>A virtual journey through the Chianti hills to explore the personality, grapes and balance of this renowned wine. A guided tasting to appreciate its style and character.</p></details>
+                <details><summary>2. Brunello di Montalcino: the iconic red</summary><p>This award-winning Tuscan red is a symbol of elegance and nobility. Its rich aromas and refined profile have earned it international acclaim.</p></details>
+                <details><summary>3. Tuscan wines</summary><p>A panorama of Tuscany's great reds and whites, focusing on native grape varieties and terroirs. A tasting to discover their uniqueness and beauty.</p></details>
+                <details><summary>4. Wines from the Italian Alps</summary><p>Wines from high altitudes and unique landscapes. Discover how mountain climates influence aroma, freshness and finesse.</p></details>
+                <details><summary>5. Wines from the Italian Islands</summary><p>A journey through volcanic soils, marine breezes and unique microclimates. A tasting of sun-kissed, mineral-rich wines deeply rooted in their island origins.</p></details>
+                <details><summary>6. Famous Italian Wines: excellence from North to South</summary><p>A tour of Italy through some of its most iconic wines. Discover the stories, peculiarities and taste of Italy’s wine heritage.</p></details>
+                <details><summary>7. Grappa: the Italian spirit</summary><p>From grape skins to the glass: a journey into the history and production of Italy’s most iconic distillate. A guided tasting to explore its nuances and regional identities.</p></details>
+                <details><summary>8. Extra Virgin Olive Oil</summary><p>Learn how to recognize quality EVOO: varieties, production methods, tasting techniques and food pairings. An eye-opening and delicious experience.</p></details>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
+    </footer>
 </body>
 </html>
