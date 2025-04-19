@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – Wine and More Experiences</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me – Wine and More</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet" />
   <style>
     body, html {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
       height: 100%;
-      background-image: url('chisiamo.jpeg');
+      background-image: url('docente1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      color: white;
     }
 
     nav {
@@ -38,41 +39,81 @@
       font-size: 18px;
     }
 
-    .overlay {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 40px 20px;
+    nav a.active-lang {
+      text-decoration: underline;
     }
 
-    .overlay p {
+    .header-bar {
+      background-color: #5e0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px 40px;
+      margin-top: 70px;
+    }
+
+    .header-bar h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header-bar p {
+      font-size: 18px;
+      margin: 5px 0 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px 60px;
+      background-color: rgba(0, 0, 0, 0.4);
+      min-height: calc(100vh - 160px);
+    }
+
+    .content p {
       font-size: 22px;
-      color: #5e0f0f;
       max-width: 800px;
+      line-height: 1.6;
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       background-color: #5e0f0f;
       color: white;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
     }
 
     @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
+
       nav a {
         font-size: 12px;
         margin: 4px 8px;
       }
 
-      .overlay p {
-        font-size: 18px;
+      .header-bar h1 {
+        font-size: 32px;
+      }
+
+      .header-bar p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      .content p {
+        font-size: 16px;
+        padding: 15px;
       }
     }
   </style>
@@ -81,16 +122,26 @@
 
   <nav>
     <a href="index-en.html">HOME</a>
-    <a href="chi-siamo-en.html">ABOUT US</a>
-    <a href="gallery.html">GALLERY</a>
+    <a href="chi-siamo-en.html">ABOUT ME</a>
+    <a href="degustazioni-e-lezioni-en.html">TASTINGS</a>
+    <a href="lezioni-en.html">CLASSES</a>
+    <a href="curiosita-en.html">DID YOU KNOW?</a>
     <a href="contact.html">CONTACT</a>
     <a href="chi-siamo.html">ITA</a>
-    <a href="chi-siamo-en.html">ENG</a>
+    <a href="chi-siamo-en.html" class="active-lang">ENG</a>
     <a href="#">FOLLOW US</a>
   </nav>
 
-  <div class="overlay">
-    <p>A cohesive team with diverse expertise in tastings, local products, communication, and education.<br><br>We’ll share our passion and enthusiasm with you!</p>
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+    <p>About me</p>
+  </div>
+
+  <div class="content">
+    <p>
+      A passionate team with diverse skills in wine tasting, local products, communication, and education.<br><br>
+      Let us share our energy and enthusiasm with you!
+    </p>
   </div>
 
   <footer>
