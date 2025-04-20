@@ -95,12 +95,16 @@
     .section {
       width: 100%;
       max-width: 1000px;
+      display: flex;
+      justify-content: center;
     }
 
     .overlay {
       background-color: rgba(0,0,0,0.5);
       padding: 30px;
       border-radius: 10px;
+      width: 100%;
+      max-width: 800px;
     }
 
     .section h2 {
@@ -122,7 +126,7 @@
       padding: 10px 15px;
       border-radius: 8px;
       margin: 0 auto 15px;
-      max-width: 700px; /* Box più stretto */
+      max-width: 700px;
     }
 
     summary {
@@ -193,8 +197,9 @@
     <a href="degustazioni-e-lezioni.html">DEGUSTAZIONI</a>
     <a href="curiosita.html">LO SAPEVI CHE?</a>
     <a href="contattaci.html">CONTATTI</a>
+    <a href="lezioni.html" class="active-lang">ITA</a>
     <a href="lezioni-eng.html">ENG</a>
-    <a href="#">FOLLOW ME</a>
+    <a href="#">FOLLOW US</a>
   </nav>
 
   <div class="header-bar">
@@ -210,11 +215,17 @@
           Le lezioni forniscono nozioni teoriche per comprendere il prodotto in profondità. La parte didattica è seguita da un assaggio guidato. Se richiesto, può essere incluso un test finale con attestato di partecipazione.
         </p>
 
-        <details><summary>Il vino e la degustazione</summary><p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p></details>
+        <details><summary>Il vino e la degustazione</summary>
+          <p>Un’introduzione al mondo della degustazione professionale: come si assaggia, quali sensi coinvolgere, come leggere le sensazioni e riconoscere qualità e difetti.</p>
+        </details>
 
-        <details><summary>Il Chianti senza segreti</summary><p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p></details>
+        <details><summary>Il Chianti senza segreti</summary>
+          <p>Il Chianti ha origini affascinanti e una tradizione ancora fortemente radicata. È un vino che racconta le sue colline, i diversi suoli, i microclimi e i vitigni che lo compongono. Attraverso un percorso guidato, accompagniamo i partecipanti alla scoperta delle caratteristiche dei territori, insegnando a leggere le etichette e riconoscere le principali tipologie.</p>
+        </details>
 
-        <details><summary>Abbinamenti cibo-vino</summary><p>Scopri le regole e il metodo per esaltare il gusto a tavola, scegliere il vino adatto ad ogni pietanza e comprendere come costruire un menù con vini abbinati.</p></details>
+        <details><summary>Abbinamenti cibo-vino</summary>
+          <p>Scopri le regole e il metodo per esaltare il gusto a tavola, scegliere il vino adatto ad ogni pietanza e comprendere come costruire un menù con vini abbinati.</p>
+        </details>
       </div>
     </div>
   </div>
