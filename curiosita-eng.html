@@ -1,182 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wine and More – Did You Know?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Quicksand', sans-serif;
-            height: 100%;
-            background-color: #5e0f0f;
-            color: white;
-            background-image: url('vigneto.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine and More – Did You Know?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: #5e0f0f;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      color: white;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 5px 15px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('vigneto.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -2;
+    }
 
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 120px);
-            padding-top: 70px;
-            padding-bottom: 50px;
-        }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            width: 100%;
-            padding: 20px;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-        .flip-card {
-            background-color: transparent;
-            width: 100%;
-            height: 150px;
-            perspective: 1000px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+      padding-top: 70px;
+      padding-bottom: 50px;
+    }
 
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 20px;
+    }
 
-        .flip-card-front, .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 180px;
+      perspective: 1000px;
+    }
 
-        .flip-card-front {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #333;
-        }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
 
-        .flip-card-back {
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            transform: rotateY(180deg);
-        }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #5e0f0f;
-            color: #ffffff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-        @media screen and (max-width: 768px) {
-            nav {
-                flex-direction: row;
-                justify-content: center;
-                gap: 5px 10px;
-                padding: 10px;
-            }
+    .flip-card-front {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+    }
 
-            nav a {
-                font-size: 12px;
-                margin: 4px 8px;
-            }
+    .flip-card-back {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      transform: rotateY(180deg);
+    }
 
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 10px;
-                padding: 10px;
-            }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e0f0f;
+      color: #ffffff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-            .flip-card {
-                height: 120px;
-                font-size: 14px;
-            }
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
 
-            .flip-card-front, .flip-card-back {
-                padding: 10px;
-                font-size: 14px;
-            }
-        }
-    </style>
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+
+      .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .flip-card {
+        height: 140px;
+      }
+
+      .flip-card-front, .flip-card-back {
+        padding: 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index-en.html">HOME</a>
-        <a href="chi-siamo-en.html">ABOUT</a>
-        <a href="degustazioni-e-lezioni-eng.html">TASTINGS</a>
-        <a href="lezioni-eng.html">LESSONS</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="curiosita.html">ITA</a>
-        <a href="#">FOLLOW ME</a>
-    </nav>
+  <nav>
+    <a href="index-en.html">HOME</a>
+    <a href="chi-siamo-en.html">ABOUT</a>
+    <a href="degustazioni-e-lezioni-eng.html">TASTINGS</a>
+    <a href="lezioni-eng.html">LESSONS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="curiosita.html">ITA</a>
+    <a href="#">FOLLOW ME</a>
+  </nav>
 
-    <div class="main-content">
-        <div class="grid-container">
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">1. How long can a bottle of wine be stored in a cellar?</div><div class="flip-card-back">The aging potential varies depending on the type of wine and the storage conditions. Some wines are meant to be drunk young, while others can age for decades.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">2. What is the difference between DOC and DOCG?</div><div class="flip-card-back">DOC indicates Controlled Designation of Origin, DOCG adds a guarantee and stricter regulations. They're not the only designations.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">3. Why swirl wine in the glass before smelling it?</div><div class="flip-card-back">Swirling increases oxygenation, releasing more aromas. It's a helpful technique to enhance wine appreciation.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">4. What does "Riserva" mean on a wine label?</div><div class="flip-card-back">It usually means longer aging. Labels might also show other terms like "Superiore" with different meanings.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">5. What does "elegance" mean in Grappa?</div><div class="flip-card-back">It refers to the finesse and harmony of aromas—qualities observed during tasting.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">6. Why are mountain and island wines so special?</div><div class="flip-card-back">Altitude brings freshness, the sea adds sapidity and aroma. Just two of many factors that make them unique.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">7. Food and wine pairing: is there an easy rule?</div><div class="flip-card-back">Red with meat, white with fish is a starting point, but exploring deeper combinations is more fun!</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">8. How important is a wine's vintage?</div><div class="flip-card-back">Very! Weather affects the grapes and the wine quality from that year.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">9. EVOO: how to recognize quality?</div><div class="flip-card-back">Fresh, intense aroma is a good sign. Smell and taste are key. Labels also help ensure certified quality.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">10. Chianti: what are its main grape varieties?</div><div class="flip-card-back">Sangiovese is the main one, but others can be blended in to add distinct characteristics.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">11. Grappa: cold or room temperature?</div><div class="flip-card-back">Young aromatic ones are nice chilled. Aged Grappa shows better at room temperature.</div></div></div>
-            <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">12. What is meant by "Super Tuscans"?</div><div class="flip-card-back">High-quality Tuscan reds made outside DOC/DOCG rules, often blending international grapes with Sangiovese.</div></div></div>
-        </div>
+  <div class="main-content">
+    <div class="grid-container">
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">1. How long can a bottle of wine be stored in a cellar?</div><div class="flip-card-back">The aging potential varies depending on the wine and storage conditions. Some wines are best young, others evolve for decades.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">2. What is the difference between DOC and DOCG?</div><div class="flip-card-back">DOC means Controlled Designation of Origin. DOCG adds "Guaranteed" and has stricter rules. They’re not the only designations.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">3. Why swirl wine in the glass before smelling it?</div><div class="flip-card-back">It increases oxygenation, releasing aromas. It’s one of many useful techniques to fully appreciate wine.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">4. What does "Riserva" mean on a bottle?</div><div class="flip-card-back">It means longer aging than the regular version. You may also see "Superiore" and other terms with specific meanings.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">5. What does "elegance" mean in Grappa?</div><div class="flip-card-back">It refers to the finesse of aromas and harmony of flavors—key elements during tasting.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">6. Why are mountain and island wines so special?</div><div class="flip-card-back">Altitude gives freshness and acidity; the sea brings minerality and aroma. These are just some unique features.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">7. Easy rule for food & wine pairing?</div><div class="flip-card-back">Red wine with meat, white with fish: a basic rule to start, but there’s much more to explore and enjoy!</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">8. How important is a wine's vintage?</div><div class="flip-card-back">Extremely! Weather conditions affect the grapes and therefore the quality of the wine from year to year.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">9. How do you recognize quality EVOO?</div><div class="flip-card-back">Fresh, intense aroma is a key sign. Smell, taste, and check certified label info for quality assurance.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">10. What grapes are used in Chianti?</div><div class="flip-card-back">Sangiovese is the star, but other red varieties may be blended in to add specific characteristics.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">11. Is Grappa served cold or room temperature?</div><div class="flip-card-back">Young, aromatic Grappa is good chilled. Aged Grappa is better at room temperature to express aromas.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">12. What are "Super Tuscans"?</div><div class="flip-card-back">High-quality Tuscan reds made outside DOC/G rules, often blending Sangiovese with Cabernet, Merlot or Syrah.</div></div></div>
     </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
+  </footer>
 </body>
 </html>
