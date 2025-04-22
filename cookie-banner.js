@@ -10,7 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
       customise: "Personalizza",
       reject: "Rifiuta tutti",
       accept: "Accetta tutto",
-      manage: "Gestisci preferenze cookie"
+      manage: "Gestisci preferenze cookie",
+      customiseTitle: "Personalizza le preferenze",
+      customiseIntro: "Utilizziamo i cookie per aiutarti a navigare in modo efficiente e a svolgere determinate funzioni. Troverai informazioni dettagliate su ogni categoria di consenso qui sotto.",
+      labels: {
+        functional: "Per funzioni extra come social e feedback.",
+        analytics: "Per analizzare il traffico.",
+        ads: "Per annunci personalizzati."
+      }
     },
     en: {
       title: "We value your privacy",
@@ -18,16 +25,25 @@ document.addEventListener("DOMContentLoaded", function () {
       customise: "Customise",
       reject: "Reject All",
       accept: "Accept All",
-      manage: "Manage cookie preferences"
+      manage: "Manage cookie preferences",
+      customiseTitle: "Customise Consent Preferences",
+      customiseIntro: "We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about each consent category below.",
+      labels: {
+        functional: "For features like social sharing and feedback.",
+        analytics: "To analyze traffic.",
+        ads: "For personalized ads."
+      }
     }
   };
 
   const t = texts[lang];
 
+  // BANNER
   const banner = document.createElement("div");
   banner.id = "cookie-banner";
+  banner.className = "cookie-popup";
   banner.innerHTML = `
-    <div class="cookie-container">
+    <div class="cookie-popup-inner">
       <h3>${t.title}</h3>
       <p>${t.description}</p>
       <div class="cookie-buttons">
@@ -39,21 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.body.appendChild(banner);
 
+  // OVERLAY POPUP
   const overlay = document.createElement("div");
   overlay.id = "cookie-overlay";
+  overlay.className = "customize-popup";
   overlay.style.display = "none";
   overlay.innerHTML = `
-    <div class="cookie-popup">
-      <h3>${lang === "it" ? "Personalizza le preferenze" : "Customise Consent Preferences"}</h3>
-      <p>${lang === "it"
-        ? "Utilizziamo i cookie per aiutarti a navigare in modo efficiente e a svolgere determinate funzioni. Troverai informazioni dettagliate su ogni categoria di consenso qui sotto."
-        : "We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about each consent category below."}
-      </p>
-      <div class="cookie-options">
-        <div><strong>Necessary</strong> – ${lang === "it" ? "Sempre attivi. Essenziali per il sito." : "Always active. Essential for the website."}</div>
-        <div><strong>Functional</strong> – ${lang === "it" ? "Per funzioni extra come social e feedback." : "For features like social sharing and feedback."}</div>
-        <div><strong>Analytics</strong> – ${lang === "it" ? "Per analizzare il traffico." : "To analyze traffic."}</div>
-        <div><strong>Advertisement</strong> – ${lang === "it" ? "Per annunci personalizzati." : "For personalized ads."}</div>
+    <div class="cookie-popup-inner">
+      <h3>${t.customiseTitle}</h3>
+      <p>${t.customiseIntro}</p>
+      <div class="cookie-toggles">
+        <div><strong>Necessary</strong> – <em>${lang === "it" ? "Sempre attivi" : "Always active"}</em></div>
+
+        <label><strong>Functional</strong> – ${t.labels.functional}
+          <input type="checkbox" id="toggle-functional" />
+          <span class="slider"></span>
+        </label>
+
+        <label><strong>Analytics</strong> – ${t.labels.analytics}
+          <input type="checkbox" id="toggle-analytics" />
+          <span class="slider"></span>
+        </label>
+
+        <label><strong>Advertisement</strong> – ${t.labels.ads}
+          <input type="checkbox" id="toggle-ads" />
+          <span class="slider"></span>
+        </label>
       </div>
       <div class="cookie-buttons">
         <button id="cookie-reject2">${t.reject}</button>
@@ -64,23 +91,27 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
   document.body.appendChild(overlay);
 
-  document.getElementById("cookie-customize").onclick = () => {
-    overlay.style.display = "flex";
-  };
+  // GESTIONE EVENTI
+  document.getElementById("cookie-customize").onclick = () => overlay.style.display = "block";
   document.getElementById("cookie-accept").onclick =
-    document.getElementById("cookie-accept2").onclick = () => {
-      localStorage.setItem("cookieConsent", "all");
-      banner.remove();
-      overlay.remove();
-    };
+  document.getElementById("cookie-accept2").onclick = () => {
+    localStorage.setItem("cookieConsent", "all");
+    banner.remove();
+    overlay.remove();
+  };
   document.getElementById("cookie-reject").onclick =
-    document.getElementById("cookie-reject2").onclick = () => {
-      localStorage.setItem("cookieConsent", "necessary");
-      banner.remove();
-      overlay.remove();
-    };
+  document.getElementById("cookie-reject2").onclick = () => {
+    localStorage.setItem("cookieConsent", "necessary");
+    banner.remove();
+    overlay.remove();
+  };
   document.getElementById("cookie-save").onclick = () => {
-    localStorage.setItem("cookieConsent", "custom");
+    const consent = {
+      functional: document.getElementById("toggle-functional").checked,
+      analytics: document.getElementById("toggle-analytics").checked,
+      ads: document.getElementById("toggle-ads").checked
+    };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
     banner.remove();
     overlay.remove();
   };
