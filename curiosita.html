@@ -1,218 +1,195 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine and More – Lo Sapevi Che?</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cookie-style.css">
-  <script src="cookie-banner.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine and More – Lo Sapevi Che?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cookie-style.css">
+  <script src="cookie-banner.js" defer></script>
 <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      height: 100%;
-      color: white;
-    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      color: white;
+    }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('vigneto.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      z-index: -2;
-    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('vigneto.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      z-index: -2;
+    }
 
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      z-index: -1;
-    }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #5e0f0f;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-    nav a.active {
-      text-decoration: underline;
-    }
+    nav a.active {
+      text-decoration: underline;
+    }
 
-    .header-bar {
-      background-color: #5e0f0f;
-      color: white;
-      text-align: center;
-      padding: 20px 10px 40px;
-      margin-top: 70px; /* Spazio per non sovrapporsi alla navigazione fissa */
-    }
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 100px 20px 60px;
+    }
 
-    .header-bar h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 48px;
-      margin: 0;
-    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+    }
 
-    .main-content {
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px 60px; /* Ridotto il padding superiore per compensare l'header */
-    }
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+    }
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      width: 100%;
-    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
 
-    .flip-card {
-      background-color: transparent;
-      perspective: 1000px;
-    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
+    .flip-card-front {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #333;
+    }
 
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      padding: 15px;
-      font-size: 15px;
-      font-weight: bold;
-    }
+    .flip-card-back {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      transform: rotateY(180deg);
+    }
 
-    .flip-card-front {
-      background-color: rgba(255, 255, 255, 0.85);
-      color: #333;
-    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e0f0f;
+      color: #ffffff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-    .flip-card-back {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      transform: rotateY(180deg);
-    }
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #5e0f0f;
-      color: #ffffff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 1000;
-    }
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
 
-    @media screen and (max-width: 768px) {
-      nav {
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px 10px;
-        padding: 10px;
-      }
-
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
-
-      .flip-card-inner {
-        height: 160px;
-      }
-
-      .header-bar h1 {
-        font-size: 32px;
-      }
-    }
-  </style>
+      .flip-card-inner {
+        height: 160px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="chi-siamo.html">CHI SONO</a>
-    <a href="degustazioni-e-lezioni.html">DEGUSTAZIONI</a>
-    <a href="lezioni.html">LEZIONI</a>
-    <a href="curiosita.html" class="active">LO SAPEVI CHE?</a>
-    <a href="contattaci.html">CONTATTACI</a>
-    <a href="curiosita-en.html">ENG</a>
-    <a href="#">SEGUIMI</a>
-  </nav>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo.html">CHI SONO</a>
+    <a href="degustazioni-e-lezioni.html">DEGUSTAZIONI</a>
+    <a href="lezioni.html">LEZIONI</a>
+    <a href="contatti.html">CONTATTI</a>
+    <a href="curiosita-en.html">ENG</a>
+    <a href="#">SEGUIMI</a>
+  </nav>
 
-  <div class="header-bar">
-    <h1>Lo sapevi che?</h1>
-  </div>
-
-  <div class="main-content">
-    <div class="grid-container">
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">1. Quanto tempo si può conservare una bottiglia di vino in cantina?</div><div class="flip-card-back">Dipende dal tipo di vino e dalle condizioni. Alcuni evolvono per decenni, altri vanno bevuti giovani.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">2. Che differenza c'è tra DOC e DOCG?</div><div class="flip-card-back">La DOCG ha regole più rigide della DOC. Esistono anche altre denominazioni valide.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">3. Perché roteare il vino nel bicchiere prima di annusarlo?</div><div class="flip-card-back">Per favorire l'ossigenazione e liberare gli aromi, migliorando l'esperienza olfattiva.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">4. Cosa indica la dicitura "Riserva"?</div><div class="flip-card-back">Un affinamento più lungo rispetto alla versione base. Esistono anche le diciture "Superiore", ecc.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">5. Cosa significa "eleganza" nella Grappa?</div><div class="flip-card-back">Profumi fini e armonici. Una qualità legata a materie prime e distillazione.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">6. Perché i vini di montagna o delle isole sono speciali?</div><div class="flip-card-back">Altitudine e mare influenzano freschezza, sapidità e aromi unici.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">7. Abbinamenti cibo-vino: da dove iniziare?</div><div class="flip-card-back">Rossi con carne, bianchi con pesce è un buon inizio, ma ci sono tante variabili divertenti da esplorare!</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">8. Quanto conta l'annata?</div><div class="flip-card-back">Influenza direttamente la qualità delle uve e del vino. Ogni anno è diverso.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">9. Come riconoscere un buon olio extravergine?</div><div class="flip-card-back">Profumo fresco, gusto equilibrato e indicazioni chiare in etichetta.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">10. Il Chianti: quali uve?</div><div class="flip-card-back">Principalmente Sangiovese, ma anche altre uve rosse che arricchiscono il profilo aromatico.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">11. La Grappa va bevuta fredda?</div><div class="flip-card-back">Le giovani si gustano fresche, le invecchiate meglio a temperatura ambiente per valorizzare i profumi.</div></div></div>
-      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">12. Cosa si intende per "Super Tuscans"? </div><div class="flip-card-back">Sono vini rossi di alta qualità prodotti in Toscana. Nacquero in origine al di fuori dei rigidi disciplinari delle DOC/DOCG tradizionali, spesso utilizzando blend di vitigni internazionali come Cabernet Sauvignon, Merlot e Syrah insieme al Sangiovese.</div></div></div>
-    </div>
-  </div>
+  <div class="main-content">
+    <div class="grid-container">
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">1. Quanto tempo si può conservare una bottiglia di vino in cantina?</div><div class="flip-card-back">Dipende dal tipo di vino e dalle condizioni. Alcuni evolvono per decenni, altri vanno bevuti giovani.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">2. Che differenza c'è tra DOC e DOCG?</div><div class="flip-card-back">La DOCG ha regole più rigide della DOC. Esistono anche altre denominazioni valide.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">3. Perché roteare il vino nel bicchiere prima di annusarlo?</div><div class="flip-card-back">Per favorire l'ossigenazione e liberare gli aromi, migliorando l'esperienza olfattiva.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">4. Cosa indica la dicitura "Riserva"?</div><div class="flip-card-back">Un affinamento più lungo rispetto alla versione base. Esistono anche le diciture "Superiore", ecc.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">5. Cosa significa "eleganza" nella Grappa?</div><div class="flip-card-back">Profumi fini e armonici. Una qualità legata a materie prime e distillazione.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">6. Perché i vini di montagna o delle isole sono speciali?</div><div class="flip-card-back">Altitudine e mare influenzano freschezza, sapidità e aromi unici.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">7. Abbinamenti cibo-vino: da dove iniziare?</div><div class="flip-card-back">Rossi con carne, bianchi con pesce è un buon inizio, ma ci sono tante variabili divertenti da esplorare!</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">8. Quanto conta l'annata?</div><div class="flip-card-back">Influenza direttamente la qualità delle uve e del vino. Ogni anno è diverso.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">9. Come riconoscere un buon olio extravergine?</div><div class="flip-card-back">Profumo fresco, gusto equilibrato e indicazioni chiare in etichetta.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">10. Il Chianti: quali uve?</div><div class="flip-card-back">Principalmente Sangiovese, ma anche altre uve rosse che arricchiscono il profilo aromatico.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">11. La Grappa va bevuta fredda?</div><div class="flip-card-back">Le giovani si gustano fresche, le invecchiate meglio a temperatura ambiente per valorizzare i profumi.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">12. Cosa si intende per "Super Tuscans"? </div><div class="flip-card-back">Sono vini rossi di alta qualità prodotti in Toscana. Nacquero in origine al di fuori dei rigidi disciplinari delle DOC/DOCG tradizionali, spesso utilizzando blend di vitigni internazionali come Cabernet Sauvignon, Merlot e Syrah insieme al Sangiovese.</div></div></div>
+    </div>
+  </div>
 
 <footer>
-  <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
-  <p>P.IVA: IT07436420488</p>
-  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-  <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
+  <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  <p>P.IVA: IT07436420488</p>
+  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+  <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
 </footer>
 </body>
 </html>
