@@ -21,11 +21,14 @@
 .cookie-buttons {
   margin-top: 15px;
   text-align: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .cookie-buttons button {
-  margin: 0 6px;
-  padding: 6px 14px;
+  padding: 8px 14px;
   background-color: #5e0f0f;
   color: white;
   border: none;
@@ -33,51 +36,55 @@
   font-weight: bold;
   cursor: pointer;
   font-size: 0.9rem;
-  min-width: 100px;
+  min-width: 110px;
+  max-width: 200px;
 }
 
 .cookie-buttons button:hover {
   background-color: #7a1c1c;
 }
 
-/* Stile per il pannello di personalizzazione */
+/* Overlay sfondo scuro ma trasparente */
 #cookie-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Box centrale - popup */
+/* Box centrale personalizzazione */
 .cookie-popup {
-  background: #111;
-  color: #fff;
+  background: #000; /* nero pieno */
+  color: #f0f0f0; /* testo chiaro */
   font-family: 'Quicksand', sans-serif;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   text-align: left;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
 }
 
 .cookie-popup h3 {
   margin-top: 0;
-  color: #f5f5f5;
+  color: #ffffff;
 }
 
 .cookie-popup p {
-  color: #ddd;
+  color: #dddddd;
+  line-height: 1.5;
 }
 
 .cookie-preference-item {
-  margin: 12px 0;
+  margin: 15px 0;
 }
 
 .cookie-preference-item label {
@@ -85,14 +92,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  color: #f0f0f0;
+  font-size: 0.95rem;
 }
 
-/* Interruttore stile switch */
+/* Switch interattivo */
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 22px;
+  width: 42px;
+  height: 24px;
 }
 
 .switch input {
@@ -110,14 +119,14 @@
   bottom: 0;
   background-color: #888;
   transition: .4s;
-  border-radius: 22px;
+  border-radius: 24px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 16px;
-  width: 16px;
+  height: 18px;
+  width: 18px;
   left: 3px;
   bottom: 3px;
   background-color: white;
@@ -131,4 +140,22 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(18px);
+}
+
+/* Responsive: mobile first */
+@media (max-width: 600px) {
+  .cookie-popup {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .cookie-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cookie-buttons button {
+    width: 100%;
+    max-width: 100%;
+  }
 }
