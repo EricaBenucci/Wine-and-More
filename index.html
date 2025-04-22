@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wine and More Experiences – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cookie-style.css">
-  <script src="cookie-banner.js" defer></script>
   <style>
     body, html {
       margin: 0;
@@ -97,7 +95,9 @@
       color: white;
     }
 
+    /* MOBILE OPTIMIZATION */
     @media screen and (max-width: 768px) {
+
       nav {
         flex-direction: row;
         justify-content: center;
@@ -139,12 +139,12 @@
     }
   </style>
 </head>
-
 <body>
+
   <nav>
-    <a href="index.html">HOME</a>
+    <a href="index-en.html">HOME</a>
     <a href="chi-siamo.html">CHI SONO</a>
-    <a href="curiosita.html">LO SAPEVI CHE?</a>
+    <a href="gallery.html">LO SAPEVI CHE?</a>
     <a href="contatti.html">CONTATTI</a>
     <a href="index-en.html">ENG</a>
     <a href="#">SEGUIMI</a>
@@ -160,45 +160,13 @@
       <div class="hero-text">Degustazioni</div>
     </a>
     <a href="lezioni.html" class="hero-box" style="background-image: url('docente1.jpg');">
-      <div class="hero-text">Lezioni</div>
+      <div class="hero-text">lezioni</div>
     </a>
   </div>
 
-  <!-- COOKIE POPUPS (saranno mostrati solo se necessario) -->
-  <div id="cookie-popup" class="cookie-popup">
-    <div class="cookie-popup-inner">
-      <h3>We value your privacy</h3>
-      <p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
-      <div class="cookie-buttons">
-        <button onclick="openCustomizePopup()">Customise</button>
-        <button onclick="rejectAllCookies()">Reject All</button>
-        <button onclick="acceptAllCookies()">Accept All</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="customize-popup" class="customize-popup">
-    <h3>Customise Consent Preferences</h3>
-    <p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p>
-    <p><strong>Necessary</strong><br>Always Active – Necessary cookies enable core functionality such as security, network management, and accessibility.</p>
-    <p><strong>Functional</strong><br>Used for extra site features like social sharing, feedback collection, etc.</p>
-    <p><strong>Analytics</strong><br>Help us understand how visitors interact with the site.</p>
-    <p><strong>Performance</strong><br>Monitor performance to improve the user experience.</p>
-    <p><strong>Advertisement</strong><br>Used to deliver relevant ads and measure campaign effectiveness.</p>
-    <div class="cookie-buttons">
-      <button onclick="rejectAllCookies()">Reject All</button>
-      <button onclick="savePreferences()">Save My Preferences</button>
-      <button onclick="acceptAllCookies()">Accept All</button>
-    </div>
-  </div>
-
   <footer>
-    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati – P.IVA: IT07436420488</p>
-    <nav style="margin-top: 10px;">
-      <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-      <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-      <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
-    </nav>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
   </footer>
+
 </body>
 </html>
