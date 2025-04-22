@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wine and More Experiences – Home</title>
+
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
-    <script src="cookie-banner.js" defer></script>
+
+  <!-- COOKIE BANNER CSS (ESSENZIALE) -->
+  <link rel="stylesheet" href="cookie-style.css">
+
+  <!-- COOKIE BANNER JS -->
+  <script src="cookie-banner.js" defer></script>
+
   <style>
     body, html {
       margin: 0;
@@ -98,7 +106,6 @@
 
     /* MOBILE OPTIMIZATION */
     @media screen and (max-width: 768px) {
-
       nav {
         flex-direction: row;
         justify-content: center;
@@ -119,8 +126,6 @@
         font-size: 14px;
         padding: 0 10px;
         white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .hero {
@@ -161,18 +166,18 @@
       <div class="hero-text">Degustazioni</div>
     </a>
     <a href="lezioni.html" class="hero-box" style="background-image: url('docente1.jpg');">
-      <div class="hero-text">lezioni</div>
+      <div class="hero-text">Lezioni</div>
     </a>
   </div>
 
- 
-<footer>
-  <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
-  <p>P.IVA: IT07436420488</p>
-  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-  <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
-</footer>
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati – P.IVA: IT07436420488</p>
+    <nav style="margin-top: 10px;">
+      <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+      <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+      <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
