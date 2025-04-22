@@ -1,146 +1,87 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const userLang = document.documentElement.lang || navigator.language || 'en';
-  const lang = userLang.startsWith('it') ? 'it' : 'en';
-  const storedConsent = localStorage.getItem('cookie-consent');
+document.addEventListener("DOMContentLoaded", function () {
+  if (localStorage.getItem("cookieConsent")) return;
 
-  if (!storedConsent) {
-    showBanner();
-  }
+  const lang = document.documentElement.lang === "it" ? "it" : "en";
 
-  function showBanner() {
-    const banner = document.createElement('div');
-    banner.id = 'cookie-banner';
-    banner.className = 'cookie-banner';
-
-    const texts = {
-      it: {
-        title: 'La tua privacy è importante',
-        message: 'Utilizziamo i cookie per migliorare l\'esperienza di navigazione, mostrare contenuti personalizzati e analizzare il traffico.',
-        accept: 'Accetta tutti',
-        reject: 'Rifiuta tutti',
-        customize: 'Personalizza',
-        modalTitle: 'Preferenze sui cookie',
-        modalMessage: 'Utilizziamo cookie essenziali, funzionali e di profilazione. Puoi gestire le tue preferenze qui sotto.',
-        save: 'Salva le preferenze'
-      },
-      en: {
-        title: 'We value your privacy',
-        message: 'We use cookies to enhance your browsing experience, serve personalised content, and analyse our traffic.',
-        accept: 'Accept all',
-        reject: 'Reject all',
-        customize: 'Customise',
-        modalTitle: 'Customise Cookie Preferences',
-        modalMessage: 'We use essential, functional, and profiling cookies. You can manage your preferences below.',
-        save: 'Save preferences'
-      }
-    };
-
-    const t = texts[lang];
-
-    banner.innerHTML = `
-      <div class="cookie-banner-box">
-        <p><strong>${t.title}</strong><br>${t.message}</p>
-        <div class="cookie-buttons">
-          <button id="cookie-reject">${t.reject}</button>
-          <button id="cookie-customize">${t.customize}</button>
-          <button id="cookie-accept">${t.accept}</button>
-        </div>
-      </div>
-    `;
-
-    document.body.appendChild(banner);
-
-    document.getElementById('cookie-accept').addEventListener('click', () => {
-      localStorage.setItem('cookie-consent', 'all');
-      closeBanner();
-    });
-
-    document.getElementById('cookie-reject').addEventListener('click', () => {
-      localStorage.setItem('cookie-consent', 'none');
-      closeBanner();
-    });
-
-    document.getElementById('cookie-customize').addEventListener('click', () => {
-      openModal();
-    });
-  }
-
-  function closeBanner() {
-    const banner = document.getElementById('cookie-banner');
-    if (banner) banner.remove();
-  }
-
-  // Funzione richiamata dal footer
-  window.openCookiePreferences = function () {
-    openModal(true);
+  const texts = {
+    it: {
+      title: "Rispettiamo la tua privacy",
+      description: "Utilizziamo i cookie per migliorare la tua esperienza di navigazione, fornire contenuti personalizzati e analizzare il nostro traffico. Cliccando su \"Accetta tutto\" acconsenti all'uso dei cookie.",
+      customise: "Personalizza",
+      reject: "Rifiuta tutti",
+      accept: "Accetta tutto",
+      manage: "Gestisci preferenze cookie"
+    },
+    en: {
+      title: "We value your privacy",
+      description: "We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking \"Accept All\", you consent to our use of cookies.",
+      customise: "Customise",
+      reject: "Reject All",
+      accept: "Accept All",
+      manage: "Manage cookie preferences"
+    }
   };
 
-  function openModal(fromFooter = false) {
-    closeBanner();
+  const t = texts[lang];
 
-    const texts = {
-      it: {
-        modalTitle: 'Personalizza le preferenze sui cookie',
-        modalMessage: 'Usiamo cookie essenziali, funzionali e analitici. Puoi gestire le tue preferenze qui sotto.',
-        accept: 'Accetta tutti',
-        reject: 'Rifiuta tutti',
-        save: 'Salva le preferenze',
-        necessary: 'Necessari – Sempre attivi',
-        functional: 'Funzionali',
-        analytics: 'Analitici'
-      },
-      en: {
-        modalTitle: 'Customise Cookie Preferences',
-        modalMessage: 'We use essential, functional, and analytical cookies. Manage your preferences below.',
-        accept: 'Accept all',
-        reject: 'Reject all',
-        save: 'Save preferences',
-        necessary: 'Necessary – Always active',
-        functional: 'Functional',
-        analytics: 'Analytics'
-      }
-    };
-
-    const t = texts[lang];
-    const modal = document.createElement('div');
-    modal.id = 'cookie-modal';
-    modal.className = 'cookie-modal';
-
-    modal.innerHTML = `
-      <div class="cookie-modal-box">
-        <h2>${t.modalTitle}</h2>
-        <p>${t.modalMessage}</p>
-        <form id="cookie-form">
-          <label><input type="checkbox" disabled checked> ${t.necessary}</label><br>
-          <label><input type="checkbox" name="functional"> ${t.functional}</label><br>
-          <label><input type="checkbox" name="analytics"> ${t.analytics}</label><br>
-        </form>
-        <div class="cookie-buttons">
-          <button id="modal-reject">${t.reject}</button>
-          <button id="modal-save">${t.save}</button>
-          <button id="modal-accept">${t.accept}</button>
-        </div>
+  const banner = document.createElement("div");
+  banner.id = "cookie-banner";
+  banner.innerHTML = `
+    <div class="cookie-container">
+      <h3>${t.title}</h3>
+      <p>${t.description}</p>
+      <div class="cookie-buttons">
+        <button id="cookie-customize">${t.customise}</button>
+        <button id="cookie-reject">${t.reject}</button>
+        <button id="cookie-accept">${t.accept}</button>
       </div>
-    `;
+    </div>
+  `;
+  document.body.appendChild(banner);
 
-    document.body.appendChild(modal);
+  const overlay = document.createElement("div");
+  overlay.id = "cookie-overlay";
+  overlay.style.display = "none";
+  overlay.innerHTML = `
+    <div class="cookie-popup">
+      <h3>${lang === "it" ? "Personalizza le preferenze" : "Customise Consent Preferences"}</h3>
+      <p>${lang === "it"
+        ? "Utilizziamo i cookie per aiutarti a navigare in modo efficiente e a svolgere determinate funzioni. Troverai informazioni dettagliate su ogni categoria di consenso qui sotto."
+        : "We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about each consent category below."}
+      </p>
+      <div class="cookie-options">
+        <div><strong>Necessary</strong> – ${lang === "it" ? "Sempre attivi. Essenziali per il sito." : "Always active. Essential for the website."}</div>
+        <div><strong>Functional</strong> – ${lang === "it" ? "Per funzioni extra come social e feedback." : "For features like social sharing and feedback."}</div>
+        <div><strong>Analytics</strong> – ${lang === "it" ? "Per analizzare il traffico." : "To analyze traffic."}</div>
+        <div><strong>Advertisement</strong> – ${lang === "it" ? "Per annunci personalizzati." : "For personalized ads."}</div>
+      </div>
+      <div class="cookie-buttons">
+        <button id="cookie-reject2">${t.reject}</button>
+        <button id="cookie-save">${lang === "it" ? "Salva preferenze" : "Save My Preferences"}</button>
+        <button id="cookie-accept2">${t.accept}</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
 
-    document.getElementById('modal-reject').addEventListener('click', () => {
-      localStorage.setItem('cookie-consent', JSON.stringify({ functional: false, analytics: false }));
-      modal.remove();
-    });
-
-    document.getElementById('modal-accept').addEventListener('click', () => {
-      localStorage.setItem('cookie-consent', 'all');
-      modal.remove();
-    });
-
-    document.getElementById('modal-save').addEventListener('click', () => {
-      const form = document.getElementById('cookie-form');
-      const functional = form.elements['functional'].checked;
-      const analytics = form.elements['analytics'].checked;
-      localStorage.setItem('cookie-consent', JSON.stringify({ functional, analytics }));
-      modal.remove();
-    });
-  }
+  document.getElementById("cookie-customize").onclick = () => {
+    overlay.style.display = "flex";
+  };
+  document.getElementById("cookie-accept").onclick =
+    document.getElementById("cookie-accept2").onclick = () => {
+      localStorage.setItem("cookieConsent", "all");
+      banner.remove();
+      overlay.remove();
+    };
+  document.getElementById("cookie-reject").onclick =
+    document.getElementById("cookie-reject2").onclick = () => {
+      localStorage.setItem("cookieConsent", "necessary");
+      banner.remove();
+      overlay.remove();
+    };
+  document.getElementById("cookie-save").onclick = () => {
+    localStorage.setItem("cookieConsent", "custom");
+    banner.remove();
+    overlay.remove();
+  };
 });
