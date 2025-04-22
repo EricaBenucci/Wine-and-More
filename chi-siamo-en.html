@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me – Wine and More Experiences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100%;
+      background-image: url('docente1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .header-bar {
+      background-color: #5e0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px 40px;
+      margin-top: 70px;
+    }
+
+    .header-bar h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: calc(100vh - 200px);
+    }
+
+    .overlay {
+      background-color: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .overlay p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5e0f0f;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px 10px;
+        padding: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 4px 8px;
+      }
+
+      .header-bar h1 {
+        font-size: 32px;
+      }
+
+      .overlay {
+        padding: 20px;
+      }
+
+      .overlay p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index-en.html">HOME</a>
+    <a href="chi-siamo-en.html">ABOUT ME</a>
+    <a href="degustazioni-e-lezioni-eng.html">TASTINGS</a>
+    <a href="lezioni-eng.html">CLASSES</a>
+    <a href="curiosita-en.html">DID YOU KNOW?</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="chi-siamo.html">ITA</a>
+  </nav>
+
+  <div class="header-bar">
+    <h1>About Me</h1>
+  </div>
+
+  <div class="main-content">
+    <div class="overlay">
+      <p>
+        I am a wine educator and have been involved in wine training and communication for over ten years.
+        I love sharing the world of taste in a clear and engaging way, offering memorable tastings and lessons
+        that will leave you with new knowledge to take home.
+      </p>
+    </div>
+  </div>
+
+ <footer>
+  <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+  <p>P.IVA: IT07436420488</p>
+  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+  <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
+</footer>
+  
+
+</body>
+</html>
