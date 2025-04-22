@@ -1,0 +1,50 @@
+<!-- cookie-style.css -->
+<style>
+  /* Stili base del banner cookie */
+  #cookie-banner, #cookie-preferences {
+    font-family: 'Quicksand', sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    display: none;
+  }
+
+  #cookie-banner h3, #cookie-preferences h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+
+  #cookie-banner button, #cookie-preferences button {
+    margin: 10px 5px 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .cookie-accept { background-color: #5e0f0f; color: white; }
+  .cookie-reject { background-color: #aaa; color: white; }
+  .cookie-customize { background-color: transparent; border: 1px solid #5e0f0f; color: #5e0f0f; }
+
+  #cookie-preferences {
+    top: 10%;
+    bottom: auto;
+    max-width: 600px;
+    margin: auto;
+    background-color: #f8f5f0;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  #cookie-preferences .category {
+    margin-bottom: 10px;
+  }
+</style>
