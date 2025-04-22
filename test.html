@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Cookie Banner</title>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cookie-popup, .customize-popup {
+      position: fixed;
+      left: 0;
+      right: 0;
+      background: white;
+      color: #333;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      z-index: 9999;
+    }
+
+    .cookie-popup {
+      bottom: 0;
+      padding: 20px;
+      display: block;
+    }
+
+    .customize-popup {
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      padding: 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      z-index: 10000;
+      display: none;
+    }
+
+    .cookie-popup-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cookie-buttons {
+      margin-top: 15px;
+      text-align: right;
+    }
+
+    .cookie-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      background-color: #5e0f0f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cookie-buttons button:hover {
+      background-color: #7a1c1c;
+    }
+
+    .cookie-preference-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px; width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .switch input:checked + .slider {
+      background-color: #5e0f0f;
+    }
+
+    .switch input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="padding: 50px; text-align: center;">Pagina di Test Cookie Banner</h1>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const c = "cookieConsent", d = "cookieConsentData";
+      if (localStorage.getItem(c)) return;
+
+      const t = {
+        title: "Rispettiamo la tua privacy",
+        description: "Utilizziamo i cookie per migliorare la tua esperienza di navigazione, fornire contenuti personalizzati e analizzare il nostro traffico. Cliccando su \"Accetta tutto\" acconsenti all'uso dei cookie.",
+        customise: "Personalizza", reject: "Rifiuta tutti", accept: "Accetta tutto",
+        customiseTitle: "Personalizza le preferenze",
+        customiseIntro: "Utilizziamo i cookie per aiutarti a navigare in modo efficiente e a svolgere determinate funzioni. Troverai informazioni dettagliate su ogni categoria di consenso qui sotto.",
+        labels: {
+          functional: "Per funzioni extra come social e feedback.",
+          analytics: "Per analizzare il traffico.",
+          ads: "Per annunci personalizzati."
+        },
+        savePreferences: "Salva preferenze"
+      };
+
+      const banner = document.createElement("div");
+      banner.id = "cookie-banner";
+      banner.className = "cookie-popup";
+      banner.innerHTML = `
+        <div class="cookie-popup-inner">
+          <h3>${t.title}</h3>
+          <p>${t.description}</p>
+          <div class="cookie-buttons">
+            <button id="cookie-customize">${t.customise}</button>
+            <button id="cookie-reject">${t.reject}</button>
+            <button id="cookie-accept">${t.accept}</button>
+          </div>
+        </div>`;
+      document.body.appendChild(banner);
+
+      const overlay = document.createElement("div");
+      overlay.id = "cookie-overlay";
+      overlay.className = "customize-popup";
+      overlay.innerHTML = `
+        <div class="cookie-popup-inner">
+          <h3>${t.customiseTitle}</h3>
+          <p>${t.customiseIntro}</p>
+          <div class="cookie-toggles">
+            <div><strong>Necessary</strong> – <em>Sempre attivi</em></div>
+            <div class="cookie-preference-item">
+              <label><strong>Functional</strong> – ${t.labels.functional}</label>
+              <label class="switch">
+                <input type="checkbox" id="toggle-functional"><span class="slider"></span>
+              </label>
+            </div>
+            <div class="cookie-preference-item">
+              <label><strong>Analytics</strong> – ${t.labels.analytics}</label>
+              <label class="switch">
+                <input type="checkbox" id="toggle-analytics"><span class="slider"></span>
+              </label>
+            </div>
+            <div class="cookie-preference-item">
+              <label><strong>Advertisement</strong> – ${t.labels.ads}</label>
+              <label class="switch">
+                <input type="checkbox" id="toggle-ads"><span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="cookie-buttons">
+            <button id="cookie-reject2">${t.reject}</button>
+            <button id="cookie-save">${t.savePreferences}</button>
+            <button id="cookie-accept2">${t.accept}</button>
+          </div>
+        </div>`;
+      document.body.appendChild(overlay);
+
+      // Toggle logic
+      const btnCustomize = document.getElementById("cookie-customize"),
+            btnAccepts = [document.getElementById("cookie-accept"), document.getElementById("cookie-accept2")],
+            btnRejects = [document.getElementById("cookie-reject"), document.getElementById("cookie-reject2")],
+            btnSave = document.getElementById("cookie-save"),
+            toggleFunctional = document.getElementById("toggle-functional"),
+            toggleAnalytics = document.getElementById("toggle-analytics"),
+            toggleAds = document.getElementById("toggle-ads");
+
+      btnCustomize.onclick = () => {
+        overlay.style.display = "block";
+        const saved = localStorage.getItem(d);
+        if (saved) {
+          const pref = JSON.parse(saved);
+          toggleFunctional.checked = pref.functional || false;
+          toggleAnalytics.checked = pref.analytics || false;
+          toggleAds.checked = pref.ads || false;
+        }
+      };
+
+      btnAccepts.forEach(btn => {
+        btn.onclick = () => {
+          localStorage.setItem(c, "all");
+          localStorage.setItem(d, JSON.stringify({ functional: true, analytics: true, ads: true }));
+          banner.remove(); overlay.remove();
+        };
+      });
+
+      btnRejects.forEach(btn => {
+        btn.onclick = () => {
+          localStorage.setItem(c, "necessary");
+          localStorage.setItem(d, JSON.stringify({ functional: false, analytics: false, ads: false }));
+          banner.remove(); overlay.remove();
+        };
+      });
+
+      btnSave.onclick = () => {
+        const prefs = {
+          functional: toggleFunctional.checked,
+          analytics: toggleAnalytics.checked,
+          ads: toggleAds.checked
+        };
+        localStorage.setItem(c, "custom");
+        localStorage.setItem(d, JSON.stringify(prefs));
+        banner.remove(); overlay.remove();
+      };
+    });
+  </script>
+</body>
+</html>
