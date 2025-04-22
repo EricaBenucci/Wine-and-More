@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wine and More Experiences – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
- <script src="cookie-banner.js" defer></script>
+  <link rel="stylesheet" href="cookie-style.css">
+  <script src="cookie-banner.js" defer></script>
   <style>
     body, html {
       margin: 0;
@@ -96,9 +97,7 @@
       color: white;
     }
 
-    /* MOBILE OPTIMIZATION */
     @media screen and (max-width: 768px) {
-
       nav {
         flex-direction: row;
         justify-content: center;
@@ -140,10 +139,10 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <nav>
-    <a href="index-en.html">HOME</a>
+    <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SONO</a>
     <a href="curiosita.html">LO SAPEVI CHE?</a>
     <a href="contatti.html">CONTATTI</a>
@@ -161,102 +160,45 @@
       <div class="hero-text">Degustazioni</div>
     </a>
     <a href="lezioni.html" class="hero-box" style="background-image: url('docente1.jpg');">
-      <div class="hero-text">lezioni</div>
+      <div class="hero-text">Lezioni</div>
     </a>
   </div>
 
-  <footer>
-  <p style="color: white;">&copy; 2025 Wine and More Experiences – Tutti i diritti riservati – P.IVA: IT07436420488</p>
-  <nav style="margin-top: 10px;">
-    <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-    <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-    <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
-  </nav>
-</footer>
+  <!-- COOKIE POPUPS (saranno mostrati solo se necessario) -->
+  <div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-popup-inner">
+      <h3>We value your privacy</h3>
+      <p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+      <div class="cookie-buttons">
+        <button onclick="openCustomizePopup()">Customise</button>
+        <button onclick="rejectAllCookies()">Reject All</button>
+        <button onclick="acceptAllCookies()">Accept All</button>
+      </div>
+    </div>
+  </div>
 
-
-</body>
-<!-- COOKIE CONSENT POPUP -->
-<div id="cookie-popup" style="display:none; position: fixed; bottom: 0; left: 0; right: 0; background: white; color: #333; padding: 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); z-index: 9999; font-family: 'Quicksand', sans-serif;">
-  <div style="max-width: 800px; margin: auto;">
-    <h3 style="margin-top: 0;">We value your privacy</h3>
-    <p>We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
-    <div style="margin-top: 15px; text-align: right;">
-      <button onclick="openCustomizePopup()" style="margin-right: 10px;">Customise</button>
-      <button onclick="rejectAllCookies()" style="margin-right: 10px;">Reject All</button>
+  <div id="customize-popup" class="customize-popup">
+    <h3>Customise Consent Preferences</h3>
+    <p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p>
+    <p><strong>Necessary</strong><br>Always Active – Necessary cookies enable core functionality such as security, network management, and accessibility.</p>
+    <p><strong>Functional</strong><br>Used for extra site features like social sharing, feedback collection, etc.</p>
+    <p><strong>Analytics</strong><br>Help us understand how visitors interact with the site.</p>
+    <p><strong>Performance</strong><br>Monitor performance to improve the user experience.</p>
+    <p><strong>Advertisement</strong><br>Used to deliver relevant ads and measure campaign effectiveness.</p>
+    <div class="cookie-buttons">
+      <button onclick="rejectAllCookies()">Reject All</button>
+      <button onclick="savePreferences()">Save My Preferences</button>
       <button onclick="acceptAllCookies()">Accept All</button>
     </div>
   </div>
-</div>
 
-<!-- CUSTOMISE POPUP -->
-<div id="customize-popup" style="display:none; position: fixed; top: 10%; left: 10%; right: 10%; background: white; color: #333; padding: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.3); z-index: 10000; font-family: 'Quicksand', sans-serif; max-height: 80vh; overflow-y: auto;">
-  <h3>Customise Consent Preferences</h3>
-  <p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p>
-  <p><strong>Necessary</strong><br>Always Active<br>Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.</p>
-  <p><strong>Functional</strong><br>Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.</p>
-  <p><strong>Analytics</strong><br>Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.</p>
-  <p><strong>Performance</strong><br>Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.</p>
-  <p><strong>Advertisement</strong><br>Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.</p>
-  <div style="margin-top: 20px; text-align: right;">
-    <button onclick="rejectAllCookies()" style="margin-right: 10px;">Reject All</button>
-    <button onclick="savePreferences()" style="margin-right: 10px;">Save My Preferences</button>
-    <button onclick="acceptAllCookies()">Accept All</button>
-  </div>
-</div>
-
-<script>
-  function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days*24*60*60*1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-  }
-
-  function getCookie(name) {
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookies = decodedCookie.split(';');
-    for (let cookie of cookies) {
-      while (cookie.charAt(0) == ' ') cookie = cookie.substring(1);
-      if (cookie.indexOf(name + "=") == 0) {
-        return cookie.substring(name.length + 1);
-      }
-    }
-    return "";
-  }
-
-  function acceptAllCookies() {
-    setCookie("cookieConsent", "accepted", 365);
-    closePopups();
-  }
-
-  function rejectAllCookies() {
-    setCookie("cookieConsent", "rejected", 365);
-    closePopups();
-  }
-
-  function savePreferences() {
-    setCookie("cookieConsent", "customised", 365);
-    closePopups();
-  }
-
-  function closePopups() {
-    document.getElementById("cookie-popup").style.display = "none";
-    document.getElementById("customize-popup").style.display = "none";
-  }
-
-  function openCustomizePopup() {
-    document.getElementById("customize-popup").style.display = "block";
-  }
-
-  window.onload = function() {
-    if (!getCookie("cookieConsent")) {
-      document.getElementById("cookie-popup").style.display = "block";
-    }
-  }
-</script>
-<!-- END COOKIE POPUP -->
-
-
-  
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati – P.IVA: IT07436420488</p>
+    <nav style="margin-top: 10px;">
+      <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+      <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+      <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
+    </nav>
+  </footer>
+</body>
 </html>
