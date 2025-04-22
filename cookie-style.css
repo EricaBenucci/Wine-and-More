@@ -1,99 +1,97 @@
-.cookie-popup {
+/* Stile per il banner cookie */
+#cookie-banner {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 9999;
-  max-width: 90%;
-  width: 400px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #333;
   font-family: 'Quicksand', sans-serif;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.cookie-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.cookie-buttons button {
+  margin: 0 6px;
+  padding: 6px 14px;
+  background-color: #5e0f0f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  min-width: 100px;
+}
+
+.cookie-buttons button:hover {
+  background-color: #7a1c1c;
+}
+
+/* Stile per il pannello di personalizzazione */
+#cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* Box centrale - popup */
+.cookie-popup {
+  background: #111;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .cookie-popup h3 {
   margin-top: 0;
-  font-size: 1.2em;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .cookie-popup p {
-  font-size: 0.95em;
-  margin: 10px 0;
-}
-
-.cookie-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.cookie-buttons button {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background-color 0.3s;
-}
-
-.cookie-buttons button:hover {
-  background-color: #ddd;
-}
-
-.customize-popup {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.95);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 90%;
-  width: 500px;
-  font-family: 'Quicksand', sans-serif;
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-.customize-popup h3 {
-  margin-top: 0;
-  font-size: 1.3em;
-  color: #fff;
-}
-
-.customize-popup p {
-  font-size: 0.95em;
-  margin: 10px 0 20px 0;
-}
-
-.cookie-toggles {
-  margin-bottom: 20px;
+  color: #ddd;
 }
 
 .cookie-preference-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #444;
+  margin: 12px 0;
 }
 
 .cookie-preference-item label {
-  font-size: 0.95em;
-  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Switch toggle */
+/* Interruttore stile switch */
 .switch {
   position: relative;
   display: inline-block;
-  width: 42px;
+  width: 40px;
   height: 22px;
 }
 
@@ -128,24 +126,9 @@
 }
 
 input:checked + .slider {
-  background-color: #4caf50;
+  background-color: #5e0f0f;
 }
 
 input:checked + .slider:before {
-  transform: translateX(20px);
-}
-
-/* ✅ Aggiunta: overlay centrato con flexbox */
-#cookie-overlay {
-  display: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.7);
-  z-index: 10000;
+  transform: translateX(18px);
 }
