@@ -1,50 +1,54 @@
-<!-- cookie-style.css -->
-<style>
-  /* Stili base del banner cookie */
-  #cookie-banner, #cookie-preferences {
-    font-family: 'Quicksand', sans-serif;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    color: #000;
-    padding: 20px;
-    z-index: 9999;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-    display: none;
-  }
+/* cookie-style.css */
+.cookie-popup,
+.customize-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: none;
+}
 
-  #cookie-banner h3, #cookie-preferences h3 {
-    margin-top: 0;
-    font-size: 18px;
-  }
+.cookie-popup {
+  bottom: 0;
+  padding: 20px;
+}
 
-  #cookie-banner button, #cookie-preferences button {
-    margin: 10px 5px 0;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+.customize-popup {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
 
-  .cookie-accept { background-color: #5e0f0f; color: white; }
-  .cookie-reject { background-color: #aaa; color: white; }
-  .cookie-customize { background-color: transparent; border: 1px solid #5e0f0f; color: #5e0f0f; }
+.cookie-popup-inner {
+  max-width: 800px;
+  margin: auto;
+}
 
-  #cookie-preferences {
-    top: 10%;
-    bottom: auto;
-    max-width: 600px;
-    margin: auto;
-    background-color: #f8f5f0;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-  }
+.cookie-buttons {
+  margin-top: 15px;
+  text-align: right;
+}
 
-  #cookie-preferences .category {
-    margin-bottom: 10px;
-  }
-</style>
+.cookie-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #5e0f0f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cookie-buttons button:hover {
+  background-color: #7a1c1c;
+}
