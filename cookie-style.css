@@ -1,4 +1,6 @@
-/* Popup generale */
+/* cookie-style.css */
+
+/* BANNER STANDARD */
 .cookie-popup,
 .customize-popup {
   position: fixed;
@@ -21,22 +23,22 @@
   top: 10%;
   left: 10%;
   right: 10%;
-  padding: 30px;
+  padding: 20px;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  border-radius: 10px;
   z-index: 10000;
+  background: white;
+  border-radius: 10px;
 }
 
-/* Contenuto interno */
 .cookie-popup-inner {
   max-width: 800px;
   margin: auto;
 }
 
 .cookie-buttons {
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: right;
 }
 
@@ -55,58 +57,66 @@
   background-color: #7a1c1c;
 }
 
-/* Stile toggle (interruttori) */
-.cookie-toggles label {
+.cookie-toggles {
+  margin-top: 20px;
+}
+
+.cookie-preference-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  padding: 10px 15px;
-  margin: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
+  margin: 12px 0;
 }
 
-.cookie-toggles input[type="checkbox"] {
-  width: 40px;
-  height: 22px;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #ccc;
-  outline: none;
-  border-radius: 20px;
+/* TOGGLE SWITCH INTERATTIVO */
+.switch {
   position: relative;
-  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
 }
 
-.cookie-toggles input[type="checkbox"]::before {
-  content: "";
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
   position: absolute;
-  left: 2px;
-  top: 2px;
-  width: 18px;
-  height: 18px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
 }
 
-.cookie-toggles input[type="checkbox"]:checked {
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
   background-color: #5e0f0f;
 }
 
-.cookie-toggles input[type="checkbox"]:checked::before {
+input:checked + .slider:before {
   transform: translateX(18px);
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
   .customize-popup {
     left: 5%;
     right: 5%;
-    padding: 20px;
+    padding: 15px;
   }
 
   .cookie-buttons {
@@ -114,14 +124,16 @@
   }
 
   .cookie-buttons button {
-    margin: 5px 8px;
-    width: 100%;
-    max-width: 200px;
+    display: block;
+    margin: 10px auto;
   }
 
-  .cookie-toggles label {
+  .cookie-preference-item {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+  }
+
+  .switch {
+    margin-top: 5px;
   }
 }
