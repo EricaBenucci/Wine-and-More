@@ -1,132 +1,127 @@
-/* Stili per il banner cookie principale */
-#cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #eee;
-    color: #333;
-    padding: 15px;
+/* Popup generale */
+.cookie-popup,
+.customize-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: none;
+}
+
+.cookie-popup {
+  bottom: 0;
+  padding: 20px;
+}
+
+.customize-popup {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  padding: 30px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  z-index: 10000;
+}
+
+/* Contenuto interno */
+.cookie-popup-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.cookie-buttons {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cookie-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #5e0f0f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cookie-buttons button:hover {
+  background-color: #7a1c1c;
+}
+
+/* Stile toggle (interruttori) */
+.cookie-toggles label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cookie-toggles input[type="checkbox"] {
+  width: 40px;
+  height: 22px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ccc;
+  outline: none;
+  border-radius: 20px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.cookie-toggles input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.cookie-toggles input[type="checkbox"]:checked {
+  background-color: #5e0f0f;
+}
+
+.cookie-toggles input[type="checkbox"]:checked::before {
+  transform: translateX(18px);
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .customize-popup {
+    left: 5%;
+    right: 5%;
+    padding: 20px;
+  }
+
+  .cookie-buttons {
     text-align: center;
-    z-index: 1000;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
+  }
 
-#cookie-banner p {
-    margin-bottom: 10px;
-}
-
-#cookie-buttons button {
-    background-color: #5e0f0f;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#cookie-buttons button:hover {
-    opacity: 0.9;
-}
-
-#cookie-buttons button#reject-all-cookies {
-    background-color: #bbb;
-}
-
-/* Stili per il pannello di personalizzazione */
-#cookie-preferences {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    color: #333;
-    text-align: left;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-#cookie-preferences h3 {
-    color: #5e0f0f;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.cookie-preference-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.cookie-preference-item label {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-/* Stili per i toggle interruttori */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 24px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #5e0f0f;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #5e0f0f;
-}
-
-input:checked + .slider:before {
-    transform: translateX(16px);
-}
-
-#cookie-preferences button#save-preferences {
-    background-color: #5e0f0f;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 15px;
+  .cookie-buttons button {
+    margin: 5px 8px;
     width: 100%;
-}
+    max-width: 200px;
+  }
 
-#cookie-preferences button#save-preferences:hover {
-    opacity: 0.9;
+  .cookie-toggles label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
