@@ -152,4 +152,3 @@ function openCookiePreferences() {
         ad.checked = false;
     }
 }
-</script>
