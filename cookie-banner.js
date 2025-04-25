@@ -127,13 +127,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funzione richiamabile dal link nel footer
     window.openCookiePreferences = function () {
+        // Mostra la finestra modale
+        o.style.display = "flex";
+
+        // Recupera le preferenze salvate, se presenti
         const saved = localStorage.getItem(d);
         if (saved) {
             const pr = JSON.parse(saved);
             f.checked = pr.functional || false;
             an.checked = pr.analytics || false;
             ad.checked = pr.ads || false;
+        } else {
+            // Se non ci sono preferenze salvate, deseleziona tutto
+            f.checked = false;
+            an.checked = false;
+            ad.checked = false;
         }
-        o.style.display = "flex";
     };
 });
