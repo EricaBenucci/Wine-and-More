@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () { 
     const c = "cookieConsent", d = "cookieConsentData";
     if (localStorage.getItem(c)) return;
