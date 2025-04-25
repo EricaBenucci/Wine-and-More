@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="cookie-style.css">
   <script src="cookie-banner.js" defer></script>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
-      height: 100%;
+      min-height: 100vh;
       background-image: url('contattaci.jpg');
       background-size: cover;
       background-position: center;
@@ -41,12 +41,9 @@
     }
 
     .content {
-      background-color: rgba(255,255,255,0.85);
-      padding: 20px;
+      padding-top: 120px;
       max-width: 500px;
-      margin: 100px auto 0 auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin: 0 auto 60px auto;
     }
 
     h1 {
@@ -100,8 +97,10 @@
       padding: 10px;
       background-color: #5e0f0f;
       color: #ffffff;
-      position: relative;
-      margin-top: 40px;
+    }
+
+    footer p, footer a {
+      color: #ffffff;
     }
 
     @media screen and (max-width: 768px) {
@@ -113,13 +112,10 @@
         font-size: 36px;
       }
     }
-
-    footer p {
-      color: #ffffff;
-    }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">HOME</a>
     <a href="chi-siamo.html">CHI SONO</a>
@@ -132,7 +128,7 @@
 
   <div class="content">
     <h1>Contattaci</h1>
-    <form action="https://formsubmit.co/wines.beers.spirits@gmail.com" method="POST">
+    <form action="https://formsubmit.co/winesandmorexp@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://ericabenucci.github.io/Wine-and-More/grazie.html">
       <input type="hidden" name="_captcha" value="false">
 
@@ -158,12 +154,13 @@
     </form>
   </div>
 
-<footer>
-  <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
-  <p>P.IVA: IT07436420488</p>
-  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-  <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
-</footer>
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+    <p>P.IVA: IT07436420488</p>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="cookie-policy.html" style="margin-left: 15px;">Cookie Policy</a>
+    <a href="#" onclick="openCookiePreferences()" style="margin-left: 15px;">Gestisci preferenze cookie</a>
+  </footer>
+
 </body>
 </html>
