@@ -1,155 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wine and More Experiences – Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G152W5MTTQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G152W5MTTQ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO TAGS -->
+  <title>Wine and More Experiences | Wine Tastings and Lessons in Tuscany</title>
+  <meta name="description" content="Discover unique wine tastings and educational lessons in Tuscany. Experience the sensory world of wine with Wine and More Experiences.">
+  <link rel="canonical" href="https://www.wineandmorexp.it/index-en.html">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="cookie-style.css">
   <script src="cookie-banner.js" defer></script>
+
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      height: 100%;
-    }
+    body, html { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; height: 100%; }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: #5e0f0f;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 10px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* --- HEADER E MENU (Uniformato) --- */
+    header {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      background-color: #5e0f0f; padding: 10px 20px; position: fixed;
+      top: 0; width: 100%; z-index: 1000; height: 80px; box-sizing: border-box;
     }
+    .header-left-col { display: flex; align-items: center; }
+    .hamburger-menu { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
+    .hamburger-menu .line { width: 30px; height: 3px; background-color: #fff; border-radius: 5px; }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 15px;
-      font-weight: bold;
-      font-size: 22px;
+    .header-center-col { display: flex; justify-content: center; align-items: center; gap: 20px; }
+    .logo-container img { height: 60px; }
+    .flag { width: 30px; height: auto; cursor: pointer; transition: transform 0.2s; }
+    .flag:hover { transform: scale(1.1); }
+
+    .header-right-col { display: flex; justify-content: flex-end; align-items: center; }
+    .ig-link { font-size: 1.5em; color: #fff; }
+
+    .menu-pop-up {
+      position: fixed; top: 0; left: -300px; width: 280px; height: 100%;
+      background-color: #5e0f0f; padding-top: 100px; transition: left 0.3s ease-in-out; 
+      z-index: 999; display: flex; flex-direction: column;
     }
+    .menu-pop-up.open { left: 0; }
+    .menu-pop-up a { color: white; padding: 20px 30px; text-decoration: none; font-size: 1.2em; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-    .header-bar {
-      background-color: #5e0f0f;
-      text-align: center;
-      padding: 20px 20px 40px;
-      margin-top: 70px;
-    }
+    /* --- CONTENUTO --- */
+    .header-bar { background-color: #5e0f0f; text-align: center; padding: 20px 20px 40px; margin-top: 80px; }
+    .header-bar h1 { font-family: 'Dancing Script', cursive; font-size: 80px; margin: 0; color: white; }
+    .header-bar p { font-size: 24px; color: white; margin: 10px 0 0; }
 
-    .header-bar h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 120px;
-      margin: 0;
-      color: white;
-    }
+    .hero { display: flex; flex-direction: row; height: calc(100vh - 250px); }
+    .hero-box { flex: 1; background-size: cover; background-position: center; position: relative; display: flex; justify-content: center; align-items: center; text-decoration: none; }
+    .hero-text { background-color: rgba(255, 255, 255, 0.8); padding: 20px 40px; border-radius: 10px; font-family: 'Quicksand', sans-serif; font-size: 30px; color: #5e0f0f; text-align: center; transition: transform 0.3s ease; text-transform: uppercase; font-weight: bold; }
+    .hero-text:hover { transform: scale(1.05); }
 
-    .header-bar p {
-      font-size: 24px;
-      color: white;
-      margin: 10px 0 0;
-    }
+    footer { text-align: center; padding: 20px; background-color: #5e0f0f; color: white; }
 
-    .hero {
-      display: flex;
-      flex-direction: row;
-      height: calc(100vh - 200px);
-    }
-
-    .hero-box {
-      flex: 1;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .hero-text {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px 40px;
-      border-radius: 10px;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 30px;
-      color: #5e0f0f;
-      text-align: center;
-      transition: transform 0.3s ease;
-      text-transform: uppercase;
-    }
-
-    .hero-text:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #5e0f0f;
-      color: white;
-    }
-
-    /* MOBILE OPTIMIZATION */
     @media screen and (max-width: 768px) {
-
-      nav {
-        flex-direction: row;
-        justify-content: center;
-        gap: 5px 15px;
-        padding: 10px;
-      }
-
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
-
-      .header-bar h1 {
-        font-size: 50px;
-      }
-
-      .header-bar p {
-        font-size: 14px;
-        padding: 0 10px;
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .hero {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .hero-box {
-        height: 45vh;
-        min-height: 250px;
-      }
-
-      .hero-text {
-        font-size: 20px;
-        padding: 15px 30px;
-      }
+      .header-bar h1 { font-size: 40px; }
+      .hero { flex-direction: column; height: auto; }
+      .hero-box { height: 40vh; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <header>
+    <div class="header-left-col">
+      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+    </div>
+    <div class="header-center-col">
+      <a href="index.html"><img src="https://flagcdn.com/it.svg" class="flag" alt="Italiano"></a>
+      <div class="logo-container">
+        <a href="index-en.html"><img src="logo wine-and-more-xp.jpg" alt="Logo Wine and More" /></a>
+      </div>
+      <a href="index-en.html"><img src="https://flagcdn.com/gb.svg" class="flag" alt="English"></a>
+    </div>
+    <div class="header-right-col">
+      <a href="https://www.instagram.com/wineandmorexp/" target="_blank" class="ig-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </header>
+
+  <nav class="menu-pop-up" id="mobileMenu">
     <a href="index-en.html">HOME</a>
-    <a href="chi-siamo-en.html">ABOUT ME</a>
-    <a href="curiosita-en.html">DID YOU KNOW?</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="index.html">ITA</a>
-    <a href="#">FOLLOW ME</a>
+    <a href="degustazioni-vino-olio-en.html">TASTINGS</a>
+    <a href="lezioni-vino-olio-en.html">LESSONS</a>
+    <a href="staff-en.html">ABOUT ME</a>
+    <a href="quiz-vino-en.html">QUIZ</a>
+    <a href="contatti-en.html">CONTACT</a>
   </nav>
 
   <div class="header-bar">
@@ -158,22 +108,30 @@
   </div>
 
   <div class="hero">
-    <a href="degustazioni-e-lezioni-eng.html" class="hero-box" style="background-image: url('cantina2.jpg');">
+    <a href="degustazioni-vino-olio-en.html" class="hero-box" style="background-image: url('cantina2.jpg');">
       <div class="hero-text">Tastings</div>
     </a>
-    <a href="lezioni-eng.html" class="hero-box" style="background-image: url('docente1.jpg');">
+    <a href="lezioni-vino-olio-en.html" class="hero-box" style="background-image: url('docente1.jpg');">
       <div class="hero-text">Lessons</div>
     </a>
   </div>
 
- <footer>
-  <p>&copy; 2025 Wine and More Experiences – All rights reserved</p>
-  <p>P.IVA: IT07436420488</p>
-  <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
-  <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
-  <a href="#" onclick="openCookiePreferences()" style="color: white;">Manage your cookie preferences</a>
- </footer>
+  <footer>
+    <p>&copy; 2026 Wine and More Experiences – All rights reserved</p>
+    <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+    <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+    <a href="#" onclick="openCookiePreferences()" style="color: white;">Manage cookie preferences</a>
+  </footer>
 
-
+  <script>
+    const hb = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    hb.onclick = function() { menu.classList.toggle('open'); };
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target) && !hb.contains(event.target)) {
+            menu.classList.remove('open');
+        }
+    });
+  </script>
 </body>
 </html>
