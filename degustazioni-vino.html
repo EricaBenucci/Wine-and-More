@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine and More – Degustazioni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="cookie-style.css">
+  <script src="cookie-banner.js" defer></script>
+  <style>
+    body, html { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; height: 100%; 
+                 background-image: url('docente2.jpg'); background-size: cover; 
+                 background-position: center; background-attachment: fixed; color: white; }
+
+    /* --- HEADER E MENU (Uniformato alla Home) --- */
+    header {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      background-color: #5e0f0f; padding: 10px 20px; position: fixed;
+      top: 0; width: 100%; z-index: 1000; height: 80px; box-sizing: border-box;
+    }
+    .header-left-col { display: flex; align-items: center; }
+    .hamburger-menu { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
+    .hamburger-menu .line { width: 30px; height: 3px; background-color: #fff; border-radius: 5px; }
+
+    .header-center-col { display: flex; justify-content: center; align-items: center; gap: 20px; }
+    .logo-container img { height: 60px; }
+    .flag { width: 30px; height: auto; cursor: pointer; }
+
+    .header-right-col { display: flex; justify-content: flex-end; align-items: center; }
+    .ig-link { font-size: 1.5em; color: #fff; }
+
+    .menu-pop-up {
+      position: fixed; top: 0; left: -300px; width: 280px; height: 100%;
+      background-color: #5e0f0f; padding-top: 100px; transition: left 0.3s ease-in-out; 
+      z-index: 999; display: flex; flex-direction: column;
+    }
+    .menu-pop-up.open { left: 0; }
+    .menu-pop-up a { color: white; padding: 20px 30px; text-decoration: none; font-size: 1.2em; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* --- CONTENUTO PAGINA --- */
+    .header-bar { background-color: #5e0f0f; color: white; text-align: center; padding: 20px 10px 40px; margin-top: 80px; }
+    .header-bar h1 { font-family: 'Dancing Script', cursive; font-size: 48px; margin: 0; }
+    .header-bar p { font-size: 18px; margin: 5px 0 0; }
+
+    .main-content { display: flex; justify-content: center; margin-top: 20px; min-height: calc(100vh - 250px); }
+    .section { width: 100%; max-width: 1000px; padding: 40px; }
+    .overlay { background-color: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
+    .section h2 { font-family: 'Dancing Script', cursive; font-size: 36px; margin-bottom: 10px; text-align: center; }
+    .section .intro { font-size: 18px; text-align: center; margin-bottom: 20px; }
+    .section details { background-color: rgba(255,255,255,0.85); color: #333; padding: 10px 15px; border-radius: 8px; margin: 15px auto; max-width: 600px; }
+    .section summary { font-weight: bold; cursor: pointer; }
+
+    footer { text-align: center; padding: 20px; background-color: #5e0f0f; color: white; }
+
+    @media screen and (max-width: 768px) {
+      .header-bar h1 { font-size: 32px; }
+      .section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left-col">
+      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+    </div>
+    <div class="header-center-col">
+      <a href="index.html"><img src="https://flagcdn.com/it.svg" class="flag" alt="Italiano"></a>
+      <div class="logo-container">
+        <a href="index.html"><img src="logo wine-and-more-xp.jpg" alt="Logo Wine and More" /></a>
+      </div>
+      <a href="index-en.html"><img src="https://flagcdn.com/gb.svg" class="flag" alt="English"></a>
+    </div>
+    <div class="header-right-col">
+      <a href="https://www.instagram.com/wineandmorexp/" target="_blank" class="ig-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </header>
+
+  <nav class="menu-pop-up" id="mobileMenu">
+    <a href="index.html">HOME</a>
+    <a href="degustazioni-vino.html">DEGUSTAZIONI</a>
+    <a href="lezioni.html">LEZIONI</a>
+    <a href="staff.html">STAFF</a>
+    <a href="quiz.html">QUIZ</a>
+    <a href="contatti.html">CONTATTI</a>
+  </nav>
+
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+    <p>Degustazioni e Lezioni</p>
+  </div>
+
+  <div class="main-content">
+    <div class="section">
+      <div class="overlay">
+        <h2>Degustazioni</h2>
+        <p class="intro">Le degustazioni offrono un'introduzione del contesto storico, culturale e produttivo del vino o del prodotto trattato, con attenzione all’esperienza sensoriale: colore, profumo, gusto, sensazioni ed emozioni.</p>
+        <details><summary>1. Il Chianti: i sapori della Toscana</summary><p>Viaggio virtuale tra le colline del Chianti per scoprire il carattere, le uve e l’equilibrio del suo celebre vino.</p></details>
+        <details><summary>2. Brunello di Montalcino: un eccellenza nel calice</summary><p>La sua eleganza e la sua esclusività ne fanno un vino che ha conquistato il mondo.</p></details>
+        <details><summary>3. I vini toscani</summary><p>Panoramica dei grandi rossi e bianchi della Toscana.</p></details>
+        <details><summary>4. I vini delle montagne italiane</summary><p>Vini d’alta quota e di luoghi sorprendenti.</p></details>
+        <details><summary>5. I vini delle isole italiane</summary><p>Un itinerario sensoriale attraverso calici che racchiudono luce, salsedine e identità mediterranea.</p></details>
+        <details><summary>6. I famosi vini italiani: eccellenze da nord a sud</summary><p>Un viaggio lungo la Penisola alla scoperta di alcuni vini simbolo.</p></details>
+        <details><summary>7. Grappa, distillato d’eccellenza</summary><p>Dalle vinacce alla magia nel calice.</p></details>
+        <details><summary>8. Olio extravergine di oliva</summary><p>Come riconoscere un olio extravergine di qualità.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
+    <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+    <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+    <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
+  </footer>
+
+  <script>
+    const hb = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    hb.onclick = function() { menu.classList.toggle('open'); };
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target) && !hb.contains(event.target)) {
+            menu.classList.remove('open');
+        }
+    });
+  </script>
+</body>
+</html>
