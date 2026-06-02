@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contattaci – Wine and More Experiences</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="cookie-style.css">
   <script src="cookie-banner.js" defer></script>
   <style>
@@ -17,6 +18,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     nav {
@@ -41,86 +43,64 @@
     }
 
     .content {
-      padding-top: 130px;
+      padding-top: 150px;
       max-width: 600px;
-      margin: 0 auto 60px auto;
+      margin: 0 auto;
+      text-align: center;
     }
 
     h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 50px;
-      color: #5e0f0f;
-      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    .contact-container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      color: white;
+    }
+
+    .info-text {
+      font-size: 1.2rem;
       margin-bottom: 25px;
     }
 
-   .form-box {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    label {
-      font-weight: bold;
-      color: #5e0f0f;
-    }
-
-    input, textarea {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Quicksand', sans-serif;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    button {
-      background-color: #5e0f0f;
+    .btn {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      padding: 15px;
+      text-decoration: none;
       color: white;
-      font-size: 18px;
-      padding: 10px;
-      border: none;
+      font-weight: bold;
       border-radius: 8px;
-      cursor: pointer;
+      font-size: 18px;
+      transition: transform 0.2s;
     }
 
-    button:hover {
-      background-color: #7a1c1c;
-    }
+    .btn:hover { transform: scale(1.05); }
+
+    .btn-mail { background-color: #d4af37; }
+    .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       background-color: #5e0f0f;
       color: #ffffff;
-    }
-
-    footer p, footer a {
-      color: #ffffff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
 
     @media screen and (max-width: 768px) {
-      nav a {
-        font-size: 12px;
-        margin: 4px 8px;
-      }
-      h1 {
-        font-size: 36px;
-      }
-      .form-box {
-        padding: 20px;
-      }
+      nav a { font-size: 12px; margin: 4px 8px; }
+      h1 { font-size: 36px; }
+      .contact-container { padding: 20px; }
     }
   </style>
 </head>
@@ -138,40 +118,22 @@
 
   <div class="content">
     <h1>Contattaci</h1>
-    <div class="form-box">
-      <form action="https://formsubmit.co/wineandmorexp@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://ericabenucci.github.io/Wine-and-More/grazie.html">
-        <input type="hidden" name="_captcha" value="false">
-
-        <label for="nome">Nome*</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="azienda">Azienda</label>
-        <input type="text" id="azienda" name="azienda">
-
-        <label for="telefono">Telefono</label>
-        <input type="tel" id="telefono" name="telefono">
-
-        <label for="email">E-mail*</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="attivita">Attività di interesse (Degustazioni o lezioni)</label>
-        <input type="text" id="attivita" name="attivita">
-
-        <label for="messaggio">Il tuo messaggio*</label>
-        <textarea id="messaggio" name="messaggio" required></textarea>
-
-        <button type="submit">Invia</button>
-      </form>
+    <div class="contact-container">
+      <p class="info-text">Per qualsiasi informazione scrivete a:</p>
+      <a href="mailto:info@wineandmore.it" class="btn btn-mail">
+        <i class="fas fa-envelope"></i> info@wineandmore.it
+      </a>
+      <a href="https://www.instagram.com/wineandmorexp/" target="_blank" class="btn btn-ig">
+        <i class="fab fa-instagram"></i> Segui su Instagram
+      </a>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 Wine and More Experiences – Tutti i diritti riservati</p>
-    <p>P.IVA: IT07436420488</p>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="cookie-policy.html" style="margin-left: 15px;">Cookie Policy</a>
-    <a href="#" onclick="openCookiePreferences()" style="margin-left: 15px;">Gestisci preferenze cookie</a>
+    <a href="privacy-policy.html" style="color: white;">Privacy Policy</a> | 
+    <a href="cookie-policy.html" style="color: white;">Cookie Policy</a> | 
+    <a href="#" onclick="openCookiePreferences()" style="color: white;">Gestisci preferenze cookie</a>
   </footer>
 
 </body>
