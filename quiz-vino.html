@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G152W5MTTQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G152W5MTTQ');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wine and More – Quiz sul Vino</title>
   
+  <!-- SEO TAGS -->
+  <title>Quiz sul Vino | Metti alla prova la tua conoscenza | Wine and More</title>
+  <meta name="description" content="Divertiti con il nostro quiz sul vino: scopri curiosità su vitigni, degustazione e abbinamenti con Wine and More Experiences.">
+  <link rel="canonical" href="https://www.wineandmorexp.it/quiz-vino.html">
+
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="cookie-style.css">
   <script src="cookie-banner.js" defer></script>
 
-  <style>
+<style>
     * { box-sizing: border-box; }
     body, html { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; height: 100%; color: white; }
 
     /* Sfondo */
-    body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url('vigneto.jpg'); background-size: cover; background-position: center; background-attachment: fixed; z-index: -2; }
-    body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: -1; }
+    body::before {
+      content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('vigneto.jpg'); background-size: cover; 
+      background-position: center; background-attachment: fixed; z-index: -2;
+    }
+    body::after {
+      content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5); z-index: -1;
+    }
 
-    /* --- HEADER E MENU (Uniformato) --- */
+    /* --- HEADER E MENU --- */
     header {
       display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
       background-color: #5e0f0f; padding: 10px 20px; position: fixed;
@@ -30,7 +50,8 @@
 
     .header-center-col { display: flex; justify-content: center; align-items: center; gap: 20px; }
     .logo-container img { height: 60px; }
-    .flag { width: 30px; height: auto; cursor: pointer; }
+    .flag { width: 30px; height: auto; cursor: pointer; transition: transform 0.2s; }
+    .flag:hover { transform: scale(1.1); }
 
     .header-right-col { display: flex; justify-content: flex-end; align-items: center; }
     .ig-link { font-size: 1.5em; color: #fff; }
@@ -43,16 +64,23 @@
     .menu-pop-up.open { left: 0; }
     .menu-pop-up a { color: white; padding: 20px 30px; text-decoration: none; font-size: 1.2em; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); }
 
-    /* Contenuto Quiz (Esempio) */
+    /* --- CONTENUTO --- */
     .main-content { display: flex; justify-content: center; padding: 120px 20px 80px; }
-    .quiz-container { max-width: 800px; width: 100%; background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; text-align: center; }
-    
+    .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; width: 100%; }
+
+    .flip-card { background-color: transparent; perspective: 1000px; }
+    .flip-card-inner { position: relative; width: 100%; height: 200px; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; cursor: pointer; }
+    .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: bold; }
+    .flip-card-front { background-color: rgba(255, 255, 255, 0.85); color: #333; }
+    .flip-card-back { background-color: rgba(0, 0, 0, 0.8); color: white; transform: rotateY(180deg); }
+
     footer { text-align: center; padding: 20px; background-color: #5e0f0f; color: #ffffff; }
 
     @media screen and (max-width: 768px) {
-      .header-bar h1 { font-size: 32px; }
+      .flip-card-inner { height: 160px; }
     }
-  </style>
+</style>
 </head>
 <body>
 
@@ -78,18 +106,25 @@
 
   <nav class="menu-pop-up" id="mobileMenu">
     <a href="index.html">HOME</a>
-    <a href="degustazioni-vino.html">DEGUSTAZIONI</a>
-    <a href="lezioni-vino.html">LEZIONI</a>
+    <a href="degustazioni-vino-olio.html">DEGUSTAZIONI</a>
+    <a href="lezioni-vino-olio.html">LEZIONI</a>
     <a href="staff.html">STAFF</a>
     <a href="quiz-vino.html">QUIZ</a>
     <a href="contatti.html">CONTATTI</a>
   </nav>
 
   <div class="main-content">
-    <div class="quiz-container">
-      <h1>Quiz sul Vino</h1>
-      <p>Mettiti alla prova con le nostre domande sul mondo del vino!</p>
-      </div>
+    <div class="grid-container">
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">1. Quanto tempo si può conservare una bottiglia di vino in cantina?</div><div class="flip-card-back">Dipende dal tipo di vino e dalle condizioni. Alcuni evolvono per decenni, altri vanno bevuti giovani.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">2. Che differenza c'è tra DOC e DOCG?</div><div class="flip-card-back">La DOCG ha regole più rigide della DOC. Esistono anche altre denominazioni valide.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">3. Perché roteare il vino nel bicchiere prima di annusarlo?</div><div class="flip-card-back">Per favorire l'ossigenazione e liberare gli aromi, migliorando l'esperienza olfattiva.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">4. Cosa indica la dicitura "Riserva"?</div><div class="flip-card-back">Un affinamento più lungo rispetto alla versione base. Esistono anche le diciture "Superiore", ecc.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">5. Cosa significa "eleganza" nella Grappa?</div><div class="flip-card-back">Profumi fini e armonici. Una qualità legata a materie prime e distillazione.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">6. Perché i vini di montagna o delle isole sono speciali?</div><div class="flip-card-back">Altitudine e mare influenzano freschezza, donando sapidità e aromi unici.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">7. Abbinamenti cibo-vino: da dove iniziare?</div><div class="flip-card-back">Vini rossi con carne, vini bianchi con pesce è un buon inizio, ma ci sono tante variabili divertenti da esplorare!</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">8. Quanto conta l'annata?</div><div class="flip-card-back">Influenza direttamente la qualità delle uve e del vino. Ogni anno è diverso.</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front">9. Come riconoscere un buon olio extravergine?</div><div class="flip-card-back">Profumo fresco, gusto equilibrato e indicazioni chiare in etichetta.</div></div></div>
+    </div>
   </div>
 
   <footer>
