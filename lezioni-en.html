@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G152W5MTTQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G152W5MTTQ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO TAGS -->
+  <title>Wine Lessons and Educational Experiences | Wine and More</title>
+  <meta name="description" content="Deepen your wine knowledge with our professional lessons in Tuscany. Discover tasting techniques, Chianti history, and food pairing with Wine and More Experiences.">
+  <link rel="canonical" href="https://www.wineandmorexp.it/lezioni-en.html">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="cookie-style.css">
+  <script src="cookie-banner.js" defer></script>
+
+  <style>
+    body, html { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; height: 100%; color: white; }
+    
+    /* Background */
+    body { background-image: url('docente1.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
+    body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: -1; }
+
+    /* --- HEADER E MENU --- */
+    header {
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+      background-color: #5e0f0f; padding: 10px 20px; position: fixed;
+      top: 0; width: 100%; z-index: 1000; height: 80px; box-sizing: border-box;
+    }
+    .header-left-col { display: flex; align-items: center; }
+    .hamburger-menu { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
+    .hamburger-menu .line { width: 30px; height: 3px; background-color: #fff; border-radius: 5px; }
+
+    .header-center-col { display: flex; justify-content: center; align-items: center; gap: 20px; }
+    .logo-container img { height: 60px; }
+    .flag { width: 30px; height: auto; cursor: pointer; transition: transform 0.2s; }
+    .flag:hover { transform: scale(1.1); }
+
+    .header-right-col { display: flex; justify-content: flex-end; align-items: center; }
+    .ig-link { font-size: 1.5em; color: #fff; }
+
+    .menu-pop-up {
+      position: fixed; top: 0; left: -300px; width: 280px; height: 100%;
+      background-color: #5e0f0f; padding-top: 100px; transition: left 0.3s ease-in-out; 
+      z-index: 999; display: flex; flex-direction: column;
+    }
+    .menu-pop-up.open { left: 0; }
+    .menu-pop-up a { color: white; padding: 20px 30px; text-decoration: none; font-size: 1.2em; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* --- CONTENUTO --- */
+    .header-bar { background-color: #5e0f0f; text-align: center; padding: 20px 10px 40px; margin-top: 80px; }
+    .header-bar h1 { font-family: 'Dancing Script', cursive; font-size: 48px; margin: 0; color: white; }
+
+    .main-content { display: flex; justify-content: center; padding: 40px 20px; min-height: 60vh; }
+    .overlay { background-color: rgba(0,0,0,0.6); padding: 30px; border-radius: 10px; width: 100%; max-width: 800px; text-align: center; }
+    
+    .section h2 { font-family: 'Dancing Script', cursive; font-size: 36px; margin-bottom: 20px; }
+    .intro { font-size: 18px; margin-bottom: 30px; }
+    
+    details { background-color: rgba(255,255,255,0.9); color: #333; padding: 10px 15px; border-radius: 8px; margin: 0 auto 15px; max-width: 500px; }
+    summary { font-weight: bold; cursor: pointer; text-align: left; }
+
+    footer { text-align: center; padding: 20px; background-color: #5e0f0f; color: white; }
+
+    @media screen and (max-width: 768px) {
+      .header-bar h1 { font-size: 32px; }
+      .overlay { padding: 20px; }
+      details { max-width: 95%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left-col">
+      <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+    </div>
+    <div class="header-center-col">
+      <a href="lezioni-vino-olio.html"><img src="https://flagcdn.com/it.svg" class="flag" alt="Italiano"></a>
+      <div class="logo-container">
+        <a href="index-en.html"><img src="logo wine-and-more-xp.jpg" alt="Logo Wine and More" /></a>
+      </div>
+      <a href="index-en.html"><img src="https://flagcdn.com/gb.svg" class="flag" alt="English"></a>
+    </div>
+    <div class="header-right-col">
+      <a href="https://www.instagram.com/wineandmorexp/" target="_blank" class="ig-link">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </header>
+
+  <nav class="menu-pop-up" id="mobileMenu">
+    <a href="index-en.html">HOME</a>
+    <a href="degustazioni-vino-olio-en.html">TASTINGS</a>
+    <a href="lezioni-en.html">LESSONS</a>
+    <a href="staff-en.html">ABOUT ME</a>
+    <a href="quiz-vino-en.html">QUIZ</a>
+    <a href="contatti-en.html">CONTACT</a>
+  </nav>
+
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+  </div>
+
+  <div class="main-content">
+    <div class="overlay">
+      <h2>Lessons</h2>
+      <p class="intro">
+        These sessions provide key theoretical knowledge to understand wine and beer more deeply. Each lesson ends with a guided tasting. If requested, a short final test and participation certificate can be included.
+      </p>
+
+      <details><summary>1. Wine and Tasting Techniques</summary>
+        <p>An introduction to professional tasting: how to evaluate appearance, aromas, taste and structure; how to recognize quality and identify faults.</p>
+      </details>
+
+      <details><summary>2. The Chianti Unveiled</summary>
+        <p>Chianti has deep historical roots and vibrant traditions. It tells the story of its hills, soils, microclimates and grape varieties. This session guides participants in understanding key territories, interpreting labels and distinguishing styles.</p>
+      </details>
+
+      <details><summary>3. Food and Wine Pairing</summary>
+        <p>Learn the rules and reasoning behind food and wine pairing. Understand how to highlight flavours, match dishes and create a harmonious menu with the right wines.</p>
+      </details>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Wine and More Experiences – All rights reserved</p>
+    <a href="privacy-policy.html" style="color: white; margin-right: 15px;">Privacy Policy</a>
+    <a href="cookie-policy.html" style="color: white; margin-right: 15px;">Cookie Policy</a>
+    <a href="#" onclick="openCookiePreferences()" style="color: white;">Manage cookie preferences</a>
+  </footer>
+
+  <script>
+    const hb = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    hb.onclick = function() { menu.classList.toggle('open'); };
+    document.addEventListener('click', function(event) {
+        if (!menu.contains(event.target) && !hb.contains(event.target)) {
+            menu.classList.remove('open');
+        }
+    });
+  </script>
+</body>
+</html>
