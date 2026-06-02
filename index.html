@@ -30,9 +30,10 @@
     .hamburger-menu { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
     .hamburger-menu .line { width: 30px; height: 3px; background-color: #fff; border-radius: 5px; }
 
-    .header-center-col { display: flex; justify-content: center; align-items: center; gap: 15px; }
+    .header-center-col { display: flex; justify-content: center; align-items: center; gap: 20px; }
     .logo-container img { height: 60px; }
-    .flag { width: 25px; height: auto; }
+    .flag { width: 30px; height: auto; cursor: pointer; transition: transform 0.2s; }
+    .flag:hover { transform: scale(1.1); }
 
     .header-right-col { display: flex; justify-content: flex-end; align-items: center; }
     .ig-link { font-size: 1.5em; color: #fff; }
@@ -75,11 +76,11 @@
     </div>
     
     <div class="header-center-col">
-      <img src="it-flag.png" class="flag" alt="IT">
+      <a href="index.html"><img src="https://flagcdn.com/it.svg" class="flag" alt="Italiano"></a>
       <div class="logo-container">
         <a href="index.html"><img src="logo wine-and-more-xp.jpg" alt="Logo Wine and More" /></a>
       </div>
-      <img src="en-flag.png" class="flag" alt="EN">
+      <a href="index-en.html"><img src="https://flagcdn.com/gb.svg" class="flag" alt="English"></a>
     </div>
 
     <div class="header-right-col">
@@ -122,7 +123,11 @@
   <script>
     const hb = document.getElementById('hamburgerBtn');
     const menu = document.getElementById('mobileMenu');
-    hb.onclick = function() { menu.classList.toggle('open'); };
+    
+    hb.onclick = function() { 
+      menu.classList.toggle('open'); 
+    };
+
     document.addEventListener('click', function(event) {
         if (!menu.contains(event.target) && !hb.contains(event.target)) {
             menu.classList.remove('open');
