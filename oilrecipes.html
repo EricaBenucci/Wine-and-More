@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wine and More – EVOO Recipes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cookie-style.css">
+  <script src="cookie-banner.js" defer></script>
+  <style>
+    * { 
+      box-sizing: border-box; 
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('docente2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #5e0f0f;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 10px 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 10px;
+      font-weight: bold;
+      font-size: 15px;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    nav a.active-lang {
+      text-decoration: underline;
+    }
+
+    .header-bar {
+      background-color: #5e0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px 10px 30px;
+      margin-top: 60px;
+    }
+
+    .header-bar h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 44px;
+      margin: 0;
+    }
+
+    .header-bar p {
+      font-size: 18px;
+      margin: 5px 0 0;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px 50px;
+    }
+
+    .section {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .overlay {
+      background-color: rgba(0,0,0,0.5);
+      padding: 30px 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .section h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 38px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      font-size: 17px;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    details {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin: 0 auto 18px;
+      max-width: 650px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    details[open] {
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    summary {
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      color: #5e0f0f;
+      outline: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: inline-block;
+      color: #5e0f0f;
+    }
+
+    .recipe-meta {
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      margin: 10px 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .recipe-content {
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .recipe-content h4 {
+      margin: 12px 0 6px 0;
+      color: #5e0f0f;
+      font-size: 16px;
+    }
+
+    .recipe-content ul, .recipe-content ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .recipe-content li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      background-color: #5e0f0f;
+      color: white;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media screen and (max-width: 768px) {
+      nav {
+        gap: 2px 6px;
+        padding: 8px 4px;
+      }
+
+      nav a {
+        font-size: 12px;
+        margin: 3px 5px;
+      }
+
+      .header-bar {
+        margin-top: 75px;
+        padding: 15px 10px 25px;
+      }
+
+      .header-bar h1 {
+        font-size: 32px;
+      }
+
+      .header-bar p {
+        font-size: 15px;
+      }
+
+      .overlay {
+        padding: 20px 12px;
+      }
+
+      .section h2 {
+        font-size: 30px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      details {
+        font-size: 14px;
+        padding: 12px 15px;
+      }
+
+      summary {
+        font-size: 16px;
+      }
+
+      .recipe-content {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="chi-siamo-en.html">ABOUT ME</a>
+    <a href="lezioni-eng.html">LESSONS</a>
+    <a href="curiosita-en.html">DID YOU KNOW?</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="degustazioni-e-lezioni.html">ITA</a>
+    <a href="#">FOLLOW ME</a>
+  </nav>
+
+  <div class="header-bar">
+    <h1>Wine and More Experiences</h1>
+    <p>Tasting & Culinary Culture</p>
+  </div>
+
+  <div class="main-content">
+    <div class="section">
+      <div class="overlay">
+        <h2>5 Classic Recipes with EVOO</h2>
+        <p class="intro">
+          High-quality Extra Virgin Olive Oil is not just a cooking fat—it is a key ingredient that transforms simple dishes into extraordinary culinary experiences. Discover 5 timeless Italian and Tuscan recipes crafted to highlight the aromas, flavors, and health benefits of fresh EVOO.
+        </p>
+
+        <!-- Recipe 1 -->
+        <details>
+          <summary>1. Classic Tomato & Basil Bruschetta</summary>
+          <div class="recipe-content">
+            <div class="recipe-meta">Prep time: 10 mins | Servings: 4</div>
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>4 thick slices of rustic sourdough bread</li>
+              <li>3 ripe vine tomatoes, diced</li>
+              <li>2 cloves garlic, peeled</li>
+              <li>Fresh basil leaves, torn</li>
+              <li>Extra Virgin Olive Oil</li>
+              <li>Sea salt & freshly cracked black pepper</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a bowl, mix the diced tomatoes, torn basil, a generous pinch of salt, pepper, and a drizzle of extra virgin olive oil. Let sit for 10 minutes.</li>
+              <li>Toast or grill the bread slices until golden and crispy.</li>
+              <li>Rub one side of each warm bread slice with a garlic clove.</li>
+              <li>Top generously with the tomato mixture and finish with a heavy drizzle of fresh extra virgin olive oil.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Recipe 2 -->
+        <details>
+          <summary>2. Spaghetti Aglio, Olio e Peperoncino</summary>
+          <div class="recipe-content">
+            <div class="recipe-meta">Prep time: 15 mins | Servings: 4</div>
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1 lb (400g) spaghetti</li>
+              <li>1/3 cup high-quality Extra Virgin Olive Oil</li>
+              <li>4 cloves garlic, thinly sliced</li>
+              <li>1 tsp red pepper flakes (or 1 fresh red chili, chopped)</li>
+              <li>Fresh parsley, finely chopped</li>
+              <li>Sea salt</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Cook spaghetti in boiling salted water until <em>al dente</em>. Reserve 1/2 cup of pasta water before draining.</li>
+              <li>In a large skillet, heat the olive oil over low heat. Add the garlic and red pepper flakes. Gently sizzle until garlic turns light golden (do not burn).</li>
+              <li>Add the cooked pasta directly to the skillet with a splash of reserved pasta water.</li>
+              <li>Toss vigorously over low heat for 1 minute until an emulsion forms. Garnish with fresh parsley and serve immediately.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Recipe 3 -->
+        <details>
+          <summary>3. Tuscan Pappa al Pomodoro</summary>
+          <div class="recipe-content">
+            <div class="recipe-meta">Prep time: 30 mins | Servings: 4</div>
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1/2 lb stale rustic bread, crusts removed and cubed</li>
+              <li>24 oz (700g) canned crushed San Marzano tomatoes</li>
+              <li>3 cups vegetable broth</li>
+              <li>2 cloves garlic, smashed</li>
+              <li>Fresh basil leaves</li>
+              <li>Extra Virgin Olive Oil</li>
+              <li>Salt & pepper</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Heat 3 tbsp of olive oil and smashed garlic in a pot over medium heat for 1–2 minutes. Add tomatoes, salt, and pepper; simmer for 10 minutes.</li>
+              <li>Add the bread and vegetable broth. Reduce heat to low and cook for 15–20 minutes, stirring occasionally to break down the bread into a thick, smooth porridge.</li>
+              <li>Remove from heat, stir in fresh basil, and let rest for 10 minutes.</li>
+              <li>Serve warm or at room temperature, finished with a rich drizzle of extra virgin olive oil.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Recipe 4 -->
+        <details>
+          <summary>4. Tuscan Chickpeas with Olive Oil & Rosemary</summary>
+          <div class="recipe-content">
+            <div class="recipe-meta">Prep time: 15 mins | Servings: 4</div>
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>Two 15-oz cans chickpeas (garbanzo beans), rinsed and drained</li>
+              <li>1 fresh rosemary sprig</li>
+              <li>2 cloves garlic, smashed</li>
+              <li>1/4 cup Extra Virgin Olive Oil</li>
+              <li>Flaky sea salt & black pepper</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>In a saucepan, warm the olive oil, garlic, and rosemary sprig over medium-low heat for 3–4 minutes to infuse the oil.</li>
+              <li>Add the drained chickpeas, salt, and pepper. Stir well to coat.</li>
+              <li>Simmer gently on low heat for 10 minutes so the chickpeas absorb the flavors.</li>
+              <li>Discard the garlic and rosemary. Transfer to a bowl and serve warm with an extra pour of olive oil on top.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Recipe 5 -->
+        <details>
+          <summary>5. Beef Carpaccio with Arugula & Parmesan</summary>
+          <div class="recipe-content">
+            <div class="recipe-meta">Prep time: 10 mins | Servings: 4</div>
+            <h4>Ingredients:</h4>
+            <ul>
+              <li>1/2 lb beef tenderloin (sushi-grade/prime), paper-thinly sliced</li>
+              <li>2 cups baby arugula</li>
+              <li>1/2 cup Parmigiano-Reggiano, shaved</li>
+              <li>Juice of half a lemon</li>
+              <li>High-quality Extra Virgin Olive Oil</li>
+              <li>Flaky sea salt & freshly ground black pepper</li>
+            </ul>
+            <h4>Instructions:</h4>
+            <ol>
+              <li>Arrange the thin beef slices in a single layer on chilled serving plates.</li>
+              <li>Top the beef with fresh baby arugula and shaved Parmigiano-Reggiano.</li>
+              <li>Lightly squeeze fresh lemon juice over the top.</li>
+              <li>Generously drizzle with extra virgin olive oil and season with flaky sea salt and cracked black pepper right before serving.</li>
+            </ol>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Wine and More Experiences – All rights reserved</p>
+    <p>P.IVA: IT07436420488</p>
+    <a href="privacy-policy.html" style="margin-right: 15px;">Privacy Policy</a>
+    <a href="cookie-policy.html" style="margin-right: 15px;">Cookie Policy</a>
+    <a href="#" onclick="openCookiePreferences()">manage your cookie preferences</a>
+  </footer>
+
+</body>
+</html>
